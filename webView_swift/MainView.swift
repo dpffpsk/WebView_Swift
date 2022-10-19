@@ -1,17 +1,17 @@
 //
-//  IntroView.swift
+//  MainView.swift
 //  webView_swift
 //
-//  Created by jiweon.lee on 2022/10/18.
+//  Created by jiweon.lee on 2022/10/19.
 //
 
 import UIKit
 
-class IntroView: UIView {
-    
+class MainView: UIView {
+
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "Intro"
+        label.text = "Main"
         label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
@@ -29,7 +29,7 @@ class IntroView: UIView {
     }
     
     func setupView() {
-        backgroundColor = .orange
+        backgroundColor = .green
         addSubview(descriptionLabel)
         
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -38,4 +38,5 @@ class IntroView: UIView {
         descriptionLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
     }
+
 }
