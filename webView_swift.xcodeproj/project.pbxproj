@@ -12,10 +12,11 @@
 		B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69928F9459B009F5533 /* MainViewController.swift */; };
 		B346B69F28F9459D009F5533 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B346B69E28F9459D009F5533 /* Assets.xcassets */; };
 		B346B6A228F9459D009F5533 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */; };
-		B3B9BC4E28FCDF1B001254FC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC4D28FCDF1B001254FC /* WebViewController.swift */; };
 		B3B9BC5228FD1A88001254FC /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B9BC5028FCE0C4001254FC /* WebKit.framework */; };
 		B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */; };
 		B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */; };
+		B3B9BC5828FE6458001254FC /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5728FE6458001254FC /* IntroViewController.swift */; };
+		B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5928FE83B3001254FC /* IntroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +27,11 @@
 		B346B69E28F9459D009F5533 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B346B6A128F9459D009F5533 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B346B6A328F9459D009F5533 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3B9BC4D28FCDF1B001254FC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		B3B9BC5028FCE0C4001254FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
+		B3B9BC5728FE6458001254FC /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		B3B9BC5928FE83B3001254FC /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +68,14 @@
 			children = (
 				B346B69528F9459B009F5533 /* AppDelegate.swift */,
 				B346B69728F9459B009F5533 /* SceneDelegate.swift */,
+				B3B9BC5728FE6458001254FC /* IntroViewController.swift */,
 				B346B69928F9459B009F5533 /* MainViewController.swift */,
+				B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */,
+				B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
-				B3B9BC4D28FCDF1B001254FC /* WebViewController.swift */,
-				B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */,
-				B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */,
+				B3B9BC5928FE83B3001254FC /* IntroView.swift */,
 			);
 			path = webView_swift;
 			sourceTree = "<group>";
@@ -155,10 +158,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
 				B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */,
 				B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
-				B3B9BC4E28FCDF1B001254FC /* WebViewController.swift in Sources */,
+				B3B9BC5828FE6458001254FC /* IntroViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
 			);

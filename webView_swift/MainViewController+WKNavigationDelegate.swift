@@ -8,7 +8,6 @@
 import UIKit
 import WebKit
 
-// 웹킷 뷰의 로딩 상황을 추적하거나 제어하는데 필요한 프로토콜
 extension MainViewController: WKNavigationDelegate {
     
     // 해당 웹 페이지를 로드할지 말지 결정
