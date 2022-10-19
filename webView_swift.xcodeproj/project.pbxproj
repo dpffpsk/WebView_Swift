@@ -17,6 +17,9 @@
 		B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */; };
 		B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5928FE83B3001254FC /* IntroView.swift */; };
 		B3B9BC5C28FF80BC001254FC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5B28FF80BC001254FC /* MainView.swift */; };
+		B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5E28FFB1F7001254FC /* WebView.swift */; };
+		B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC6028FFCA27001254FC /* SubViewController.swift */; };
+		B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC6228FFCA47001254FC /* SubView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		B3B9BC5928FE83B3001254FC /* IntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroView.swift; sourceTree = "<group>"; };
 		B3B9BC5B28FF80BC001254FC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B3B9BC5E28FFB1F7001254FC /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B3B9BC6028FFCA27001254FC /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
+		B3B9BC6228FFCA47001254FC /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,11 @@
 				B346B69928F9459B009F5533 /* MainViewController.swift */,
 				B3B9BC5B28FF80BC001254FC /* MainView.swift */,
 				B3B9BC5928FE83B3001254FC /* IntroView.swift */,
+				B3B9BC5E28FFB1F7001254FC /* WebView.swift */,
 				B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */,
 				B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */,
+				B3B9BC6028FFCA27001254FC /* SubViewController.swift */,
+				B3B9BC6228FFCA47001254FC /* SubView.swift */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -159,12 +168,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
+				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
 				B3B9BC5C28FF80BC001254FC /* MainView.swift in Sources */,
 				B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */,
 				B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
+				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
+				B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

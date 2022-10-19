@@ -10,32 +10,39 @@ import WebKit
 
 class MainViewController: UIViewController {
     
-//    var webView: WKWebView!
-//
-//    override func loadView() {
-//        let webConfiguration = WKWebViewConfiguration()
-//        webView = WKWebView(frame: .zero, configuration: webConfiguration)
-//        webView.uiDelegate = self
-//        view = webView
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        let myURL = URL(string:"https://www.naver.com")
-//        let myRequest = URLRequest(url: myURL!)
-//        webView.load(myRequest)
-//    }
-    
     let mainView = MainView()
     let introView = IntroView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
+        setupLayout()
+        setupConstraints()
+        setIntro()
+        buttonAction()
+    }
+    
+    func setupLayout() {
+        view.addSubview(mainView)
+        view.addSubview(introView)
+    }
+    
+    func setupConstraints() {
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         
         
+        introView.translatesAutoresizingMaskIntoConstraints = false
+        introView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        introView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
+        introView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        introView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    }
+    
+    func setIntro() {
         Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(introTimer), userInfo: nil, repeats: false)
     }
     
@@ -49,37 +56,13 @@ class MainViewController: UIViewController {
         }
     }
     
-    func setupConstraints() {
-       // mainView.constraintsFromSuperView(superView: view, isTopSuperView: false)
+    func buttonAction() {
+        self.mainView.nativeButton.addTarget(self, action: #selector(showNative), for: .touchUpInside)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("===viewWillAppear===")
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        print("===viewDidAppear===")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        print("===viewWillDisappear===")
-    }
-    
-    private func setupView() {
-        view.addSubview(mainView)
-        view.addSubview(introView)
-        
-        mainView.translatesAutoresizingMaskIntoConstraints = false
-        mainView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        mainView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        mainView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
-        
-        introView.translatesAutoresizingMaskIntoConstraints = false
-        introView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
-        introView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        introView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        introView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+    @objc func showNative(_: UIButton) {
+        print("==============showNative")
+        let vc = SubViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
