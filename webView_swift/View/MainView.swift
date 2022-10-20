@@ -2,7 +2,7 @@
 //  MainView.swift
 //  webView_swift
 //
-//  Created by jiweon.lee on 2022/10/19.
+//  Created by wons on 2022/10/19.
 //
 
 import UIKit

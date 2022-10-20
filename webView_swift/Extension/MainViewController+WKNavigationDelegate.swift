@@ -2,7 +2,7 @@
 //  MainViewController+WKNavigationDelegate.swift
 //  webView_swift
 //
-//  Created by jiweon.lee on 2022/10/17.
+//  Created by wons on 2022/10/17.
 //
 
 import UIKit
