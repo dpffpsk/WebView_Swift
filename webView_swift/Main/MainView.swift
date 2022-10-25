@@ -47,7 +47,6 @@ class MainView: UIView {
     }
     
     func setupConstraints() {
-        backgroundColor = .white
         webView.translatesAutoresizingMaskIntoConstraints = false
         webView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         webView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true

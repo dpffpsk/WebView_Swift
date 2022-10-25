@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = .white
         setupLayout()
         setupConstraints()
         setIntro()
@@ -29,7 +30,7 @@ class MainViewController: UIViewController {
     
     func setupConstraints() {
         mainView.translatesAutoresizingMaskIntoConstraints = false
-        mainView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+        mainView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         mainView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         mainView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
@@ -38,7 +39,7 @@ class MainViewController: UIViewController {
         introView.translatesAutoresizingMaskIntoConstraints = false
         introView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         introView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        introView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        introView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         introView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
     
@@ -47,8 +48,6 @@ class MainViewController: UIViewController {
     }
     
     @objc func introTimer() {
-        print("===Intro===")
-        
         view.subviews.forEach { view in
             if view == introView {
                 view.removeFromSuperview()
@@ -61,7 +60,6 @@ class MainViewController: UIViewController {
     }
     
     @objc func showNative(_: UIButton) {
-        print("==============showNative")
         let vc = SubViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
