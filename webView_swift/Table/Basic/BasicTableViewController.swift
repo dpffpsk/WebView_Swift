@@ -26,7 +26,7 @@ class BasicTableViewController: BaseViewController {
         basicTableView.translatesAutoresizingMaskIntoConstraints = false
         basicTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         basicTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        basicTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        basicTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         basicTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
 }

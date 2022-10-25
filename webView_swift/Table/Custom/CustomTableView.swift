@@ -10,83 +10,35 @@ import UIKit
 class CustomTableView: BaseView {
 
     // tableView 생성
-    lazy var tableView = UITableView(frame: .zero, style: .plain)
-    
-    lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = "title"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        return label
+    lazy var tableView: UITableView = {
+        let tableview = UITableView()
+        return tableview
     }()
     
-    lazy var contentsLabel: UILabel = {
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.textColor = .blue
-        label.text = "content"
-        label.font = UIFont.systemFont(ofSize: 15)
-        return label
-    }()
-
-    lazy var imageView: UIImageView = {
-        let img = UIImageView()
-        img.image = UIImage(named: "face.smiling.fill")
-        return img
-    }()
+    override init() {
+        super.init()
+        
+        self.tableView.rowHeight = 100
+        setTableView()
+    }
     
-    lazy var stackView: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.spacing = 5
-        stack.distribution = .fill
-        return stack
-    }()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func setupLayout() {
-        
-        /*
-         addSubview(titleLabel)
-         addSubview(listCollectionView)
-         addSubview(buttonStackView)
-         buttonStackView.addArrangedSubview(registerButton)
-         buttonStackView.addArrangedSubview(importButton)
-         */
-    
-        addSubview(imageView)
-        addSubview(stackView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(contentsLabel)
-        
-        
+        addSubview(tableView)
     }
     
     override func setupConstraints() {
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: 10).isActive = true
-        imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        imageView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        imageView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.leadingAnchor.constraint(equalTo: self.imageView.trailingAnchor, constant: 10).isActive = true
-        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
-        /*
-         buttonStackView.snp.makeConstraints {
-             $0.top.equalTo(listCollectionView.snp.bottom).offset(50)
-             $0.leading.equalToSuperview().offset(leading)
-             $0.trailing.equalToSuperview().offset(-trailing)
-             $0.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-bottom)
-             $0.height.equalTo(60)
-         }
-         */
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant:  10).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 10).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -10).isActive = true
     }
     
     func setTableView() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+     tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "CustomTableViewCell")
     }
 }

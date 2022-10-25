@@ -33,7 +33,7 @@ class SubViewController: UIViewController {
         subView.translatesAutoresizingMaskIntoConstraints = false
         subView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         subView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        subView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+        subView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         subView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
 }
@@ -68,19 +68,19 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
         return header[section]
     }
     
-    // tapped cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var vc = UIViewController()
 
-        switch indexPath.row {
-        case 0:
-            vc = BasicTableViewController()
-        case 1:
-            vc = CustomTableViewController()
-        default:
-            print("empty vc")
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                vc = BasicTableViewController()
+            case 1:
+                vc = CustomTableViewController()
+            default:
+                print("empty vc")
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
         }
-
-        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

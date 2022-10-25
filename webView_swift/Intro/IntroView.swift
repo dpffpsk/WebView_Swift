@@ -13,7 +13,7 @@ class IntroView: UIView {
         let label = UILabel()
         label.text = "Intro"
         label.textAlignment = .center
-        label.textColor = .black
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return label
     }()
@@ -21,7 +21,7 @@ class IntroView: UIView {
     init() {
         super.init(frame: .zero)
         
-        self.backgroundColor = .orange
+        self.backgroundColor = .systemBlue
         setupLayout()
         setupConstraints()
     }

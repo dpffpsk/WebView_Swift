@@ -24,7 +24,7 @@ class MainView: UIView {
         let btn = UIButton()
         btn.setTitle("Native", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .blue
+        btn.backgroundColor = .systemBlue
         return btn
     }()
 

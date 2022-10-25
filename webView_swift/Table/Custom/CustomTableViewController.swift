@@ -26,8 +26,9 @@ class CustomTableViewController: BaseViewController {
         customTableview.translatesAutoresizingMaskIntoConstraints = false
         customTableview.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         customTableview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        customTableview.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-        customTableview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        customTableview.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
+        customTableview.bottomAnchor.constraint(equalTo: view.bottomAnchor
+                                                , constant: 0).isActive = true
     }
 }
 extension CustomTableViewController: UITableViewDataSource {
@@ -36,8 +37,9 @@ extension CustomTableViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: String(describing: UITableViewCell.self))
+//        let cell = UITableViewCell(style: CustomTableViewCell, reuseIdentifier: String(describing: UITableViewCell.self))
         
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         return cell
     }
 }
