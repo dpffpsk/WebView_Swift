@@ -10,8 +10,8 @@ import UIKit
 class SubViewController: UIViewController {
 
     let subView: SubView = SubView()
-    let data = [["Basic", "Custom", "Expand"],["A", "B", "C"]]
-    let header = ["TableView", "Other"]
+    let data = [["Basic", "Custom", "Expand"],["권한 설정"]]
+    let header = ["TableView", "Permission"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var vc = UIViewController()
 
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             switch indexPath.row {
             case 0:
                 vc = BasicTableViewController()
@@ -83,6 +84,11 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
                 print("empty vc")
             }
             self.navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            vc = PermissionViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+            print("empty section")
         }
     }
 }

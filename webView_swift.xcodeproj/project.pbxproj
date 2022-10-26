@@ -23,6 +23,8 @@
 		B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161D29079FF0003AE1AC /* ExpandableTableView.swift */; };
 		B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161F2907A11B003AE1AC /* ExpandableCellData.swift */; };
 		B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */; };
+		B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38916252908C746003AE1AC /* PermissionViewController.swift */; };
+		B38916282908C755003AE1AC /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38916272908C755003AE1AC /* PermissionView.swift */; };
 		B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */; };
 		B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */; };
 		B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5928FE83B3001254FC /* IntroView.swift */; };
@@ -52,6 +54,8 @@
 		B389161D29079FF0003AE1AC /* ExpandableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableView.swift; sourceTree = "<group>"; };
 		B389161F2907A11B003AE1AC /* ExpandableCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCellData.swift; sourceTree = "<group>"; };
 		B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
+		B38916252908C746003AE1AC /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
+		B38916272908C755003AE1AC /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		B3B9BC5028FCE0C4001254FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
@@ -94,14 +98,15 @@
 		B346B69428F9459B009F5533 /* webView_swift */ = {
 			isa = PBXGroup;
 			children = (
-				B3580E3B2902637700D3491E /* Table */,
-				B3B9BC6E29022F1D001254FC /* Intro */,
-				B3B9BC6D29022F0C001254FC /* Sub */,
-				B3B9BC6C29022EF0001254FC /* WebView */,
-				B3B9BC6B29022EE9001254FC /* Main */,
 				B3B9BC6929013739001254FC /* App */,
-				B3B9BC662901367C001254FC /* Extension */,
 				B3B9BC6A29022EAC001254FC /* Base */,
+				B3B9BC6E29022F1D001254FC /* Intro */,
+				B3B9BC6B29022EE9001254FC /* Main */,
+				B3B9BC662901367C001254FC /* Extension */,
+				B3B9BC6C29022EF0001254FC /* WebView */,
+				B3B9BC6D29022F0C001254FC /* Sub */,
+				B3580E3B2902637700D3491E /* Table */,
+				B38916232908C509003AE1AC /* Permission */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -147,6 +152,15 @@
 				B389161F2907A11B003AE1AC /* ExpandableCellData.swift */,
 			);
 			path = Expandable;
+			sourceTree = "<group>";
+		};
+		B38916232908C509003AE1AC /* Permission */ = {
+			isa = PBXGroup;
+			children = (
+				B38916252908C746003AE1AC /* PermissionViewController.swift */,
+				B38916272908C755003AE1AC /* PermissionView.swift */,
+			);
+			path = Permission;
 			sourceTree = "<group>";
 		};
 		B3B9BC4F28FCE0C3001254FC /* Frameworks */ = {
@@ -300,6 +314,8 @@
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
+				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
+				B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */,
 				B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */,
 				B3580E402902643500D3491E /* BasicTableViewController.swift in Sources */,
 				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
