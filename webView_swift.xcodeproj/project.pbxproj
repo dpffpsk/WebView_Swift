@@ -20,6 +20,9 @@
 		B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E4C290282D200D3491E /* CustomTableView.swift */; };
 		B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161929076B4B003AE1AC /* CustomTableViewCell.swift */; };
 		B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161B29079FA8003AE1AC /* ExpandableViewController.swift */; };
+		B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161D29079FF0003AE1AC /* ExpandableTableView.swift */; };
+		B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161F2907A11B003AE1AC /* ExpandableCellData.swift */; };
+		B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */; };
 		B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */; };
 		B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */; };
 		B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5928FE83B3001254FC /* IntroView.swift */; };
@@ -46,6 +49,9 @@
 		B3580E4C290282D200D3491E /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		B389161929076B4B003AE1AC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B389161B29079FA8003AE1AC /* ExpandableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewController.swift; sourceTree = "<group>"; };
+		B389161D29079FF0003AE1AC /* ExpandableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableView.swift; sourceTree = "<group>"; };
+		B389161F2907A11B003AE1AC /* ExpandableCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCellData.swift; sourceTree = "<group>"; };
+		B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		B3B9BC5028FCE0C4001254FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
@@ -136,6 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				B389161B29079FA8003AE1AC /* ExpandableViewController.swift */,
+				B389161D29079FF0003AE1AC /* ExpandableTableView.swift */,
+				B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */,
+				B389161F2907A11B003AE1AC /* ExpandableCellData.swift */,
 			);
 			path = Expandable;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
+				B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */,
 				B3580E402902643500D3491E /* BasicTableViewController.swift in Sources */,
 				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
 				B3B9BC5C28FF80BC001254FC /* MainView.swift in Sources */,
@@ -300,8 +310,10 @@
 				B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
 				B3580E442902651400D3491E /* BasicTableView.swift in Sources */,
+				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
 				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
+				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,
 				B3580E462902652800D3491E /* BaseView.swift in Sources */,

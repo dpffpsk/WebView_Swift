@@ -43,7 +43,20 @@ extension BasicTableViewController: UITableViewDataSource {
         if #available(iOS 14.0, *) {
             var content = cell.defaultContentConfiguration()
             content.text = self.data[indexPath.row]
+//            content.image = UIImage(systemName: "star.fill")
             cell.contentConfiguration = content
+            
+            
+            /*
+             var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
+             backgroundConfig.backgroundColor = .lightGray
+             backgroundConfig.cornerRadius = 10
+             backgroundConfig.backgroundInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+             backgroundConfig.strokeColor = .systemPurple
+             backgroundConfig.strokeWidth = 5
+             cell.backgroundConfiguration = backgroundConfig
+             */
+
         } else {
         // 기존과 동일(iOS 14.0 까지만 지원)
             cell.textLabel?.text = self.data[indexPath.row]

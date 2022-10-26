@@ -77,6 +77,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
                 vc = BasicTableViewController()
             case 1:
                 vc = CustomTableViewController()
+            case 2:
+                vc = ExpandableViewController()
             default:
                 print("empty vc")
             }
