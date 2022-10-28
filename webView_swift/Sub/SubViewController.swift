@@ -92,7 +92,7 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             case 0:
                 vc = CameraViewController()
             case 1:
-                vc = ExpandableViewController()
+                vc = GalleryViewController()
             default:
                 print("empty vc")
             }
