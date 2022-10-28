@@ -25,6 +25,10 @@
 		B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */; };
 		B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38916252908C746003AE1AC /* PermissionViewController.swift */; };
 		B38916282908C755003AE1AC /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38916272908C755003AE1AC /* PermissionView.swift */; };
+		B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389162C290A63D7003AE1AC /* CameraViewController.swift */; };
+		B389162F290A66C5003AE1AC /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389162E290A66C5003AE1AC /* CameraView.swift */; };
+		B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891630290BBEB9003AE1AC /* GalleryView.swift */; };
+		B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891632290BBECB003AE1AC /* GalleryViewController.swift */; };
 		B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */; };
 		B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */; };
 		B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5928FE83B3001254FC /* IntroView.swift */; };
@@ -56,6 +60,10 @@
 		B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableViewCell.swift; sourceTree = "<group>"; };
 		B38916252908C746003AE1AC /* PermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionViewController.swift; sourceTree = "<group>"; };
 		B38916272908C755003AE1AC /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
+		B389162C290A63D7003AE1AC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B389162E290A66C5003AE1AC /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		B3891630290BBEB9003AE1AC /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		B3891632290BBECB003AE1AC /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		B3B9BC5028FCE0C4001254FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
@@ -107,6 +115,7 @@
 				B3B9BC6D29022F0C001254FC /* Sub */,
 				B3580E3B2902637700D3491E /* Table */,
 				B38916232908C509003AE1AC /* Permission */,
+				B3891629290A6314003AE1AC /* Photo */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -161,6 +170,33 @@
 				B38916272908C755003AE1AC /* PermissionView.swift */,
 			);
 			path = Permission;
+			sourceTree = "<group>";
+		};
+		B3891629290A6314003AE1AC /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				B389162B290A637D003AE1AC /* Gallery */,
+				B389162A290A6373003AE1AC /* Camera */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		B389162A290A6373003AE1AC /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				B389162C290A63D7003AE1AC /* CameraViewController.swift */,
+				B389162E290A66C5003AE1AC /* CameraView.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		B389162B290A637D003AE1AC /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				B3891630290BBEB9003AE1AC /* GalleryView.swift */,
+				B3891632290BBECB003AE1AC /* GalleryViewController.swift */,
+			);
+			path = Gallery;
 			sourceTree = "<group>";
 		};
 		B3B9BC4F28FCE0C3001254FC /* Frameworks */ = {
@@ -312,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
+				B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
 				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
@@ -326,7 +363,9 @@
 				B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
 				B3580E442902651400D3491E /* BasicTableView.swift in Sources */,
+				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
+				B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */,
 				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
@@ -334,6 +373,7 @@
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,
 				B3580E462902652800D3491E /* BaseView.swift in Sources */,
 				B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */,
+				B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */,
 				B3B9BC68290136D5001254FC /* WKWebViewConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

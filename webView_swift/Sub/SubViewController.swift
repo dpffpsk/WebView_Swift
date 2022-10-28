@@ -10,8 +10,8 @@ import UIKit
 class SubViewController: UIViewController {
 
     let subView: SubView = SubView()
-    let data = [["Basic", "Custom", "Expand"],["권한 설정"]]
-    let header = ["TableView", "Permission"]
+    let data = [["Basic", "Custom", "Expand"],["권한 설정"],["Camera", "Gallery"]]
+    let header = ["TableView", "Permission", "Photo"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +86,16 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             self.navigationController?.pushViewController(vc, animated: true)
         case 1:
             vc = PermissionViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            switch indexPath.row {
+            case 0:
+                vc = CameraViewController()
+            case 1:
+                vc = ExpandableViewController()
+            default:
+                print("empty vc")
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             print("empty section")

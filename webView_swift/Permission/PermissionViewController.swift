@@ -33,83 +33,78 @@ class PermissionViewController: BaseViewController {
         permissionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
     
-    func buttonAction() {
+    // 버튼 클릭시 이벤트
+    private func buttonAction() {
         self.permissionView.cameraButton.addTarget(self, action: #selector(cameraPermission), for: .touchUpInside)
         self.permissionView.photoButton.addTarget(self, action: #selector(photoPermission), for: .touchUpInside)
         self.permissionView.locationButton.addTarget(self, action: #selector(locationPermission), for: .touchUpInside)
         self.permissionView.contactsButton.addTarget(self, action: #selector(contactsPermission), for: .touchUpInside)
     }
     
+    // 권한 허용 alert
+    private func grantedPermission(_ str: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "\(str) 권한 허용 상태입니다.", message: "", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+            
+            alert.addAction(ok)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        print("")
+        print("===============================")
+        print("\(str) : 권한 허용")
+        print("===============================")
+        print("")
+    }
+    
+    // 권한 거부 alert
+    private func deniedPermission(_ str1: String, _ str2: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "", message: "\(str1)을 사용할 수 없습니다.\n설정 > 개인정보 보호 > \(str2) > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "설정", style: .default, handler: { _ in
+                guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                
+                if UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+                }
+            })
+            let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
+            
+            alert.addAction(cancel)
+            alert.addAction(ok)
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        print("")
+        print("===============================")
+        print("\(str1) : 권한 거부")
+        print("===============================")
+        print("")
+    }
+    
     // 카메라 권한
     @objc func cameraPermission(_: UIButton) {
-        AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
+        AVCaptureDevice.requestAccess(for: .video, completionHandler: { [weak self] (granted: Bool) in
             if granted {
-                print("")
-                print("===============================")
-                print("카메라 : 권한 허용")
-                print("===============================")
-                print("")
+                self?.grantedPermission("카메라")
             } else {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "", message: "카메라를 사용할 수 없습니다.\n설정 > 개인정보 보호 > 카메라 > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
-                    
-                    let ok = UIAlertAction(title: "설정", style: .default, handler: { _ in
-                        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                        
-                        if UIApplication.shared.canOpenURL(url) {
-                            UIApplication.shared.open(url)
-                        }
-                    })
-                    let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
-                    
-                    alert.addAction(cancel)
-                    alert.addAction(ok)
-                    
-                    self.present(alert, animated: true, completion: nil)
-                }
-                
-                print("")
-                print("===============================")
-                print("카메라 : 권한 거부")
-                print("===============================")
-                print("")
+                self?.deniedPermission("카메라", "카메라")
             }
         })
     }
     
     // 사진첩 권한 //todo error
     @objc func photoPermission(_: UIButton) {
-        PHPhotoLibrary.requestAuthorization( { status in
+        PHPhotoLibrary.requestAuthorization( { [weak self] status in
             if status == .authorized {
-                print("")
-                print("===============================")
-                print("사진첩 : 권한 허용")
-                print("===============================")
-                print("")
+                self?.grantedPermission("사진")
             } else {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "", message: "사진첩을 사용할 수 없습니다.\n설정 > 개인정보 보호 > 사진 > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
-                    
-                    let ok = UIAlertAction(title: "설정", style: .default, handler: { _ in
-                        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                        
-                        if UIApplication.shared.canOpenURL(url) {
-                            UIApplication.shared.open(url)
-                        }
-                    })
-                    let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
-                    
-                    alert.addAction(cancel)
-                    alert.addAction(ok)
-                    
-                    self.present(alert, animated: true, completion: nil)
-                }
-                
-                print("")
-                print("===============================")
-                print("사진첩 : 권한 거부")
-                print("===============================")
-                print("")
+                self?.deniedPermission("사진첩", "사진")
             }
         })
     }
@@ -128,11 +123,7 @@ class PermissionViewController: BaseViewController {
         
         switch authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
-            print("")
-            print("===============================")
-            print("위치 : 권한 허용")
-            print("===============================")
-            print("")
+            self.grantedPermission("위치")
         case .restricted, .notDetermined:
             print("")
             print("===============================")
@@ -140,29 +131,7 @@ class PermissionViewController: BaseViewController {
             print("===============================")
             print("")
         case .denied:
-            DispatchQueue.main.async {
-                let alert = UIAlertController(title: "", message: "위치를 사용할 수 없습니다.\n설정 > 개인정보 보호 > 위치 서비스 > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
-                
-                let ok = UIAlertAction(title: "설정", style: .default, handler: { _ in
-                    guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                    
-                    if UIApplication.shared.canOpenURL(url) {
-                        UIApplication.shared.open(url)
-                    }
-                })
-                let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
-                
-                alert.addAction(cancel)
-                alert.addAction(ok)
-                
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-            print("")
-            print("===============================")
-            print("위치 : 권한 거부")
-            print("===============================")
-            print("")
+            self.deniedPermission("위치", "위치 서비스")
         default:
             print("위치 : Default")
         }
@@ -184,41 +153,13 @@ class PermissionViewController: BaseViewController {
     
     // 전화번호부 권한
     @objc func contactsPermission(_: UIButton) {
-        
-        CNContactStore().requestAccess(for: .contacts) { (granted, error) in
+        CNContactStore().requestAccess(for: .contacts) { [weak self] (granted, error) in
             guard granted // 권한 부여
             else { // 권한 거부
-                print("")
-                print("===============================")
-                print("전화번호부 : 권한 거부")
-                print("===============================")
-                print("")
-                
-                // [메인 큐에서 비동기 방식 실행 : UI 동작 실시]
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "", message: "연락처를 사용할 수 없습니다.\n설정 > 개인정보 보호 > 연락처 > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
-                    
-                    let ok = UIAlertAction(title: "설정", style: .default, handler: { _ in
-                        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                        
-                        if UIApplication.shared.canOpenURL(url) {
-                            UIApplication.shared.open(url)
-                        }
-                    })
-                    let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
-                    
-                    alert.addAction(cancel)
-                    alert.addAction(ok)
-                    
-                    self.present(alert, animated: true, completion: nil)
-                }
+                self?.deniedPermission("연락처", "연락처")
                 return
             }
-            print("")
-            print("===============================")
-            print("전화번호부 : 권한 허용")
-            print("===============================")
-            print("")
+            self?.grantedPermission("연락처")
         }
     }
 }
