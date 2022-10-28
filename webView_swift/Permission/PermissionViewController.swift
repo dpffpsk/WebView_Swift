@@ -13,12 +13,11 @@ import Contacts
 
 class PermissionViewController: BaseViewController {
 
-    var locationManager: CLLocationManager!
     let permissionView = PermissionView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         buttonAction()
     }
     
@@ -117,51 +116,68 @@ class PermissionViewController: BaseViewController {
     
     // 위치 권한
     @objc func locationPermission(_: UIButton) {
+        CLLocationManager().requestWhenInUseAuthorization() // 위치 권한 요청
+        var authorizationStatus: CLAuthorizationStatus
+        
+        if #available(iOS 14.0, *) {
+            authorizationStatus = CLLocationManager().authorizationStatus
+        } else {
+            authorizationStatus = CLLocationManager.authorizationStatus()
+        }
+        print("authorizationStatus : \(authorizationStatus)")
+        
+        switch authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            print("")
+            print("===============================")
+            print("위치 : 권한 허용")
+            print("===============================")
+            print("")
+        case .restricted, .notDetermined:
+            print("")
+            print("===============================")
+            print("위치 : 아직 선택하지 않음")
+            print("===============================")
+            print("")
+        case .denied:
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "", message: "위치를 사용할 수 없습니다.\n설정 > 개인정보 보호 > 위치 서비스 > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
+                
+                let ok = UIAlertAction(title: "설정", style: .default, handler: { _ in
+                    guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                    
+                    if UIApplication.shared.canOpenURL(url) {
+                        UIApplication.shared.open(url)
+                    }
+                })
+                let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
+                
+                alert.addAction(cancel)
+                alert.addAction(ok)
+                
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            print("")
+            print("===============================")
+            print("위치 : 권한 거부")
+            print("===============================")
+            print("")
+        default:
+            print("위치 : Default")
+        }
+        
         if #available(iOS 14.0, *) {
             let accuracyState = CLLocationManager().accuracyAuthorization
             print("accuracyState : \(accuracyState)")
             
-            if accuracyState == .fullAccuracy {
-                print("")
-                print("===============================")
-                print("위치 : 권한 허용")
-                print("===============================")
-                print("")
-            } else {
-                DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "", message: "위치를 사용할 수 없습니다.\n설정 > 개인정보 보호 > 위치 서비스 > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
-                    
-                    let ok = UIAlertAction(title: "설정", style: .default, handler: { _ in
-                        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                        
-                        if UIApplication.shared.canOpenURL(url) {
-                            UIApplication.shared.open(url)
-                        }
-                    })
-                    let cancel = UIAlertAction(title: "취소", style: .destructive, handler: nil)
-                    
-                    alert.addAction(cancel)
-                    alert.addAction(ok)
-                    
-                    self.present(alert, animated: true, completion: nil)
-                }
-                
-                print("")
-                print("===============================")
-                print("위치 : 권한 거부")
-                print("===============================")
-                print("")
-            }
-        } else {
-            switch CLLocationManager.authorizationStatus() {
-            case .authorizedAlways, .authorizedWhenInUse:
-                print("GPS: 권한 있음")
-            case .restricted, .notDetermined:
-                print("GPS: 아직 선택하지 않음")
-            case .denied:
-                print("GPS: 권한 없음")
-            default:
-                print("GPS: Default")
+            switch accuracyState {
+            case .fullAccuracy: // 정확한 위치 데이터에 접근
+                print("full")
+            case .reducedAccuracy: // 대략적 위치 데이터에 접근
+                print("reduce")
+            @unknown default:
+                print("Unknown")
             }
         }
     }
