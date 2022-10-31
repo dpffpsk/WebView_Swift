@@ -18,6 +18,11 @@
 		B3580E482902653A00D3491E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E472902653A00D3491E /* BaseViewController.swift */; };
 		B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E49290282AA00D3491E /* CustomTableViewController.swift */; };
 		B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E4C290282D200D3491E /* CustomTableView.swift */; };
+		B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */; };
+		B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */; };
+		B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BA290F5AE100B6E6F1 /* UIApplication.swift */; };
+		B36959BD290F5B6A00B6E6F1 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BC290F5B6A00B6E6F1 /* UIWindow.swift */; };
+		B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BE290FA19100B6E6F1 /* CameraPermission.swift */; };
 		B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161929076B4B003AE1AC /* CustomTableViewCell.swift */; };
 		B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161B29079FA8003AE1AC /* ExpandableViewController.swift */; };
 		B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161D29079FF0003AE1AC /* ExpandableTableView.swift */; };
@@ -53,6 +58,11 @@
 		B3580E472902653A00D3491E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B3580E49290282AA00D3491E /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		B3580E4C290282D200D3491E /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermission.swift; sourceTree = "<group>"; };
+		B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionAlert.swift; sourceTree = "<group>"; };
+		B36959BA290F5AE100B6E6F1 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		B36959BC290F5B6A00B6E6F1 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
+		B36959BE290FA19100B6E6F1 /* CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermission.swift; sourceTree = "<group>"; };
 		B389161929076B4B003AE1AC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B389161B29079FA8003AE1AC /* ExpandableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewController.swift; sourceTree = "<group>"; };
 		B389161D29079FF0003AE1AC /* ExpandableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableView.swift; sourceTree = "<group>"; };
@@ -110,8 +120,8 @@
 				B3B9BC6A29022EAC001254FC /* Base */,
 				B3B9BC6E29022F1D001254FC /* Intro */,
 				B3B9BC6B29022EE9001254FC /* Main */,
-				B3B9BC662901367C001254FC /* Extension */,
 				B3B9BC6C29022EF0001254FC /* WebView */,
+				B3B9BC662901367C001254FC /* Extension */,
 				B3B9BC6D29022F0C001254FC /* Sub */,
 				B3580E3B2902637700D3491E /* Table */,
 				B38916232908C509003AE1AC /* Permission */,
@@ -136,8 +146,8 @@
 		B3580E3C2902639A00D3491E /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				B3580E3F2902643500D3491E /* BasicTableViewController.swift */,
 				B3580E432902651400D3491E /* BasicTableView.swift */,
+				B3580E3F2902643500D3491E /* BasicTableViewController.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -145,9 +155,9 @@
 		B3580E3D290263A500D3491E /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				B3580E49290282AA00D3491E /* CustomTableViewController.swift */,
 				B3580E4C290282D200D3491E /* CustomTableView.swift */,
 				B389161929076B4B003AE1AC /* CustomTableViewCell.swift */,
+				B3580E49290282AA00D3491E /* CustomTableViewController.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -155,10 +165,10 @@
 		B3580E3E290263AD00D3491E /* Expandable */ = {
 			isa = PBXGroup;
 			children = (
-				B389161B29079FA8003AE1AC /* ExpandableViewController.swift */,
 				B389161D29079FF0003AE1AC /* ExpandableTableView.swift */,
 				B38916212907A6F7003AE1AC /* ExpandableTableViewCell.swift */,
 				B389161F2907A11B003AE1AC /* ExpandableCellData.swift */,
+				B389161B29079FA8003AE1AC /* ExpandableViewController.swift */,
 			);
 			path = Expandable;
 			sourceTree = "<group>";
@@ -166,8 +176,11 @@
 		B38916232908C509003AE1AC /* Permission */ = {
 			isa = PBXGroup;
 			children = (
-				B38916252908C746003AE1AC /* PermissionViewController.swift */,
 				B38916272908C755003AE1AC /* PermissionView.swift */,
+				B38916252908C746003AE1AC /* PermissionViewController.swift */,
+				B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */,
+				B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */,
+				B36959BE290FA19100B6E6F1 /* CameraPermission.swift */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -184,8 +197,8 @@
 		B389162A290A6373003AE1AC /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				B389162C290A63D7003AE1AC /* CameraViewController.swift */,
 				B389162E290A66C5003AE1AC /* CameraView.swift */,
+				B389162C290A63D7003AE1AC /* CameraViewController.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -211,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				B3B9BC67290136D5001254FC /* WKWebViewConfiguration.swift */,
+				B36959BA290F5AE100B6E6F1 /* UIApplication.swift */,
+				B36959BC290F5B6A00B6E6F1 /* UIWindow.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -348,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
+				B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */,
 				B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
@@ -356,15 +372,18 @@
 				B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */,
 				B3580E402902643500D3491E /* BasicTableViewController.swift in Sources */,
 				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
+				B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */,
 				B3B9BC5C28FF80BC001254FC /* MainView.swift in Sources */,
 				B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */,
 				B3580E482902653A00D3491E /* BaseViewController.swift in Sources */,
 				B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */,
 				B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */,
+				B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
 				B3580E442902651400D3491E /* BasicTableView.swift in Sources */,
 				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
+				B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */,
 				B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */,
 				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
@@ -375,6 +394,7 @@
 				B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */,
 				B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */,
 				B3B9BC68290136D5001254FC /* WKWebViewConfiguration.swift in Sources */,
+				B36959BD290F5B6A00B6E6F1 /* UIWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

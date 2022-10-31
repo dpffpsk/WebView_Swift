@@ -9,7 +9,7 @@ import UIKit
 
 class GalleryView: BaseView {
 
-    lazy var selectButton: UIButton = {
+    lazy var galleryButton: UIButton = {
         let btn = UIButton()
         btn.configuration = .filled()
         btn.setTitle("Gallery", for: .normal)
@@ -24,7 +24,7 @@ class GalleryView: BaseView {
     }()
     
     override func setupLayout() {
-        addSubview(selectButton)
+        addSubview(galleryButton)
         addSubview(galleryImageView)
     }
     
@@ -36,13 +36,13 @@ class GalleryView: BaseView {
         galleryImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
         galleryImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
-        selectButton.translatesAutoresizingMaskIntoConstraints = false
-        selectButton.topAnchor.constraint(equalTo: self.galleryImageView.bottomAnchor, constant: 20).isActive = true
-        selectButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
-        selectButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
-        selectButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
-        selectButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        selectButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        galleryButton.translatesAutoresizingMaskIntoConstraints = false
+        galleryButton.topAnchor.constraint(equalTo: self.galleryImageView.bottomAnchor, constant: 20).isActive = true
+        galleryButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 50).isActive = true
+        galleryButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50).isActive = true
+        galleryButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50).isActive = true
+        galleryButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        galleryButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
     }
 
 }

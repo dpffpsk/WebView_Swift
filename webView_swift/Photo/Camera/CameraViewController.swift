@@ -34,6 +34,7 @@ class CameraViewController: BaseViewController {
     
     // 카메라 권한
     private func cameraPermission() {
+
         AVCaptureDevice.requestAccess(for: .video, completionHandler: { [weak self] (granted: Bool) in
             if granted {
                 self?.openCamera()
@@ -142,6 +143,7 @@ extension CameraViewController: UIImagePickerControllerDelegate, UINavigationCon
         picker.dismiss(animated: true, completion: nil)
     }
     
+    // 촬영한 사진 저장
     @objc func savedImage(image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeMutableRawPointer?) {
         
         // 사진첩 권한
