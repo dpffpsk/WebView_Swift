@@ -23,6 +23,8 @@
 		B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BA290F5AE100B6E6F1 /* UIApplication.swift */; };
 		B36959BD290F5B6A00B6E6F1 /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BC290F5B6A00B6E6F1 /* UIWindow.swift */; };
 		B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BE290FA19100B6E6F1 /* CameraPermission.swift */; };
+		B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C02910AF1600B6E6F1 /* Gallery.swift */; };
+		B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C22910FC7500B6E6F1 /* Camera.swift */; };
 		B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161929076B4B003AE1AC /* CustomTableViewCell.swift */; };
 		B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161B29079FA8003AE1AC /* ExpandableViewController.swift */; };
 		B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161D29079FF0003AE1AC /* ExpandableTableView.swift */; };
@@ -63,6 +65,8 @@
 		B36959BA290F5AE100B6E6F1 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		B36959BC290F5B6A00B6E6F1 /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		B36959BE290FA19100B6E6F1 /* CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermission.swift; sourceTree = "<group>"; };
+		B36959C02910AF1600B6E6F1 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		B36959C22910FC7500B6E6F1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		B389161929076B4B003AE1AC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B389161B29079FA8003AE1AC /* ExpandableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewController.swift; sourceTree = "<group>"; };
 		B389161D29079FF0003AE1AC /* ExpandableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableView.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 			children = (
 				B389162E290A66C5003AE1AC /* CameraView.swift */,
 				B389162C290A63D7003AE1AC /* CameraViewController.swift */,
+				B36959C22910FC7500B6E6F1 /* Camera.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			children = (
 				B3891630290BBEB9003AE1AC /* GalleryView.swift */,
 				B3891632290BBECB003AE1AC /* GalleryViewController.swift */,
+				B36959C02910AF1600B6E6F1 /* Gallery.swift */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */,
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
 				B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */,
 				B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */,
@@ -387,6 +394,7 @@
 				B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */,
 				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
+				B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,

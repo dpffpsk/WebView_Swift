@@ -43,13 +43,7 @@ class PermissionViewController: BaseViewController {
     
     // 카메라 권한
     @objc func cameraPermission(_: UIButton) {
-        AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
-            if granted {
-                PermissionAlert().grantedPermission("카메라")
-            } else {
-                PermissionAlert().deniedPermission("카메라", "카메라")
-            }
-        })
+        CameraPermission().requestAuthorization()
     }
     
     // 사진첩 권한
@@ -75,7 +69,7 @@ class PermissionViewController: BaseViewController {
         case .restricted, .notDetermined:
             print("")
             print("===============================")
-            print("위치 : 아직 선택하지 않음")
+            print("[위치 : 아직 선택하지 않음]")
             print("===============================")
             print("")
         case .denied:

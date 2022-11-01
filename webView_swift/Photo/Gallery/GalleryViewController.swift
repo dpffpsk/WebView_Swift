@@ -15,7 +15,6 @@ class GalleryViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         buttonAction()
     }
 
@@ -38,39 +37,50 @@ class GalleryViewController: BaseViewController {
     
     // 사진첩 권한 요청
     @objc func selected(_: UIButton) {
-        if GalleryPermission().authorizationStatus() != .denied {
-            print("==========")
-            self.openGallery()
-        } else {
-            PermissionAlert().deniedPermission("dddd", "dddddd")
+        PHPhotoLibrary.requestAuthorization(for: .readWrite) { authorizationStatus in
+            switch authorizationStatus {
+            case .denied:
+                PermissionAlert().deniedPermission("사진첩", "사진")
+            case .authorized, .limited:
+                self.openGallery()
+            default:
+                print("[GalleryPermission.requestAuthorization() : \(authorizationStatus)]")
+            }
         }
     }
     
     // 사진첩 열기
-    func openGallery() {
-        /* will be deprecated(ios 14)
-            let imagePicker = UIImagePickerController()
-            imagePicker.sourceType = .photoLibrary
-            imagePicker.delegate = self
-         */
-        var configuration = PHPickerConfiguration()
-        configuration.selectionLimit = 0
-        configuration.filter = .any(of: [.images, .videos])
-        
-        DispatchQueue.main.async {
-            let picker = PHPickerViewController(configuration: configuration) // must be used from main thread only
-            picker.delegate = self
-            self.present(picker, animated: true, completion: nil)
+    private func openGallery() {
+        if #available(iOS 14.0, *) {
+            var configuration = PHPickerConfiguration()
+            configuration.selectionLimit = 0
+            configuration.filter = .any(of: [.images, .videos])
+
+            DispatchQueue.main.async {
+                let picker = PHPickerViewController(configuration: configuration) // must be used from main thread only
+                picker.delegate = self
+
+                self.present(picker, animated: true, completion: nil)
+            }
+        } else {
+            DispatchQueue.main.async {
+                let imagePicker = UIImagePickerController()
+                imagePicker.sourceType = .photoLibrary
+                imagePicker.delegate = self
+                
+                self.present(imagePicker, animated: true)
+            }
         }
     }
 }
 
 extension GalleryViewController: PHPickerViewControllerDelegate {
+    @available(iOS 14.0, *)
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
-        
+
         let itemProvider = results.first?.itemProvider
-        
+
         if let itemProvider = itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
             itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
                 DispatchQueue.main.async {
@@ -82,21 +92,19 @@ extension GalleryViewController: PHPickerViewControllerDelegate {
         }
     }
 }
-/* will be deprecated(ios 14)
-    extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                imageView.contentMode = .scaleAspectFit
-                imageView.image = pickedImage //4
-            }
-            dismiss(animated: true, completion: nil)
-        }
-         
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            dismiss(animated: true, completion: nil)
-        }
-    }
- */
 
+extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            galleryView.galleryImageView.contentMode = .scaleToFill
+            galleryView.galleryImageView.image = pickedImage //4
+        }
+        dismiss(animated: true, completion: nil)
+    }
+     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+}
 
 

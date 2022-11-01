@@ -20,14 +20,10 @@ class PermissionAlert {
         DispatchQueue.main.async {
             UIApplication.topViewController()?.present(alert, animated: true)
         }
-        
-        print("")
-        print("===============================")
-        print("\(str) : 권한 허용")
-        print("===============================")
-        print("")
+        print("[\(str) : 권한 허용]")
     }
     
+    // 권한 거부 alert
     func deniedPermission(_ str1: String, _ str2: String) {
         let alert = UIAlertController(title: "", message: "\(str1)을 사용할 수 없습니다.\n설정 > 개인정보 보호 > \(str2) > APP 을 ON으로 설정해주세요.", preferredStyle: .alert)
         
@@ -47,10 +43,6 @@ class PermissionAlert {
             UIApplication.topViewController()?.present(alert, animated: true)
         }
         
-        print("")
-        print("===============================")
-        print("\(str1) : 권한 거부")
-        print("===============================")
-        print("")
+        print("[\(str1) : 권한 거부]")
     }
 }

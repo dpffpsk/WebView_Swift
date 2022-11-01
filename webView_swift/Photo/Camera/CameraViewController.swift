@@ -16,7 +16,7 @@ class CameraViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        cameraPermission()
+//        cameraPermission()
         buttonAction()
     }
     
@@ -34,10 +34,15 @@ class CameraViewController: BaseViewController {
     
     // 카메라 권한
     private func cameraPermission() {
-
+        print("-------")
+        var c: Camera!
         AVCaptureDevice.requestAccess(for: .video, completionHandler: { [weak self] (granted: Bool) in
             if granted {
-                self?.openCamera()
+
+                    c = Camera(self!)
+                    c.open()
+
+//                self?.openCamera()
             } else {
                 self?.deniedPermission("카메라", "카메라")
             }
@@ -48,11 +53,8 @@ class CameraViewController: BaseViewController {
     private func savedImageAlert() {
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "사진이 저장되었습니다.", message: "", preferredStyle: .alert)
-            
             let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
-            
             alert.addAction(ok)
-            
             self.present(alert, animated: true, completion: nil)
         }
         
@@ -113,6 +115,7 @@ class CameraViewController: BaseViewController {
     }
     
     @objc func retake(_: UIButton) {
+        print("retake")
         self.cameraPermission()
     }
 }
