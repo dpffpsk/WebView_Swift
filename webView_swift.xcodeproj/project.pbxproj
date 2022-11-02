@@ -25,6 +25,8 @@
 		B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BE290FA19100B6E6F1 /* CameraPermission.swift */; };
 		B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C02910AF1600B6E6F1 /* Gallery.swift */; };
 		B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C22910FC7500B6E6F1 /* Camera.swift */; };
+		B36959C52911130000B6E6F1 /* LocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C42911130000B6E6F1 /* LocationPermission.swift */; };
+		B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C6291114B900B6E6F1 /* ContactPermission.swift */; };
 		B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161929076B4B003AE1AC /* CustomTableViewCell.swift */; };
 		B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161B29079FA8003AE1AC /* ExpandableViewController.swift */; };
 		B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161D29079FF0003AE1AC /* ExpandableTableView.swift */; };
@@ -67,6 +69,8 @@
 		B36959BE290FA19100B6E6F1 /* CameraPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermission.swift; sourceTree = "<group>"; };
 		B36959C02910AF1600B6E6F1 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		B36959C22910FC7500B6E6F1 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		B36959C42911130000B6E6F1 /* LocationPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermission.swift; sourceTree = "<group>"; };
+		B36959C6291114B900B6E6F1 /* ContactPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPermission.swift; sourceTree = "<group>"; };
 		B389161929076B4B003AE1AC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B389161B29079FA8003AE1AC /* ExpandableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewController.swift; sourceTree = "<group>"; };
 		B389161D29079FF0003AE1AC /* ExpandableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */,
 				B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */,
 				B36959BE290FA19100B6E6F1 /* CameraPermission.swift */,
+				B36959C42911130000B6E6F1 /* LocationPermission.swift */,
+				B36959C6291114B900B6E6F1 /* ContactPermission.swift */,
 			);
 			path = Permission;
 			sourceTree = "<group>";
@@ -368,11 +374,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */,
 				B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */,
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
 				B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */,
 				B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
+				B36959C52911130000B6E6F1 /* LocationPermission.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
 				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
 				B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */,
