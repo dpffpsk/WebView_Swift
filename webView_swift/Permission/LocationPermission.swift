@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 class LocationPermission {
-    // 권한 요청 // request authorization
+    // 권한 요청 
     func requestAuthorization() {
 
         var authorizationStatus: CLAuthorizationStatus

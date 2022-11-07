@@ -32,20 +32,13 @@ class GalleryViewController: BaseViewController {
     
     // gallery 버튼
     private func buttonAction() {
-        self.galleryView.galleryButton.addTarget(self, action: #selector(selected(_:)), for: .touchUpInside)
+        self.galleryView.galleryButton.addTarget(self, action: #selector(tappedGallery(_:)), for: .touchUpInside)
     }
     
     // 사진첩 권한 요청
-    @objc func selected(_: UIButton) {
-        PHPhotoLibrary.requestAuthorization(for: .readWrite) { authorizationStatus in
-            switch authorizationStatus {
-            case .denied:
-                PermissionAlert().deniedPermission("사진첩", "사진")
-            case .authorized, .limited:
-                self.openGallery()
-            default:
-                print("[GalleryPermission.requestAuthorization() : \(authorizationStatus)]")
-            }
+    @objc func tappedGallery(_: UIButton) {
+        GalleryPermission().requestAuthorization { [weak self] _ in
+            self?.openGallery()
         }
     }
     
@@ -74,6 +67,7 @@ class GalleryViewController: BaseViewController {
     }
 }
 
+// available(iOS 14.0, *)
 extension GalleryViewController: PHPickerViewControllerDelegate {
     @available(iOS 14.0, *)
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
@@ -93,6 +87,7 @@ extension GalleryViewController: PHPickerViewControllerDelegate {
     }
 }
 
+// deprecated(iOS 14.0)
 extension GalleryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {

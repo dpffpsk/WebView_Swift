@@ -8,7 +8,7 @@
 import UIKit
 import PhotosUI
 
-// TODO: 사진첩 불러오기
+// TODO: 사진첩 불러오기(버튼 동작)
 class Gallery: NSObject, PHPickerViewControllerDelegate {
     
     var view: UIViewController?
@@ -17,7 +17,20 @@ class Gallery: NSObject, PHPickerViewControllerDelegate {
         super.init()
         self.view = view
     }
-
+    
+    func open() {
+        if #available(iOS 14.0, *) {
+            var configuration = PHPickerConfiguration()
+            configuration.selectionLimit = 0
+            configuration.filter = .any(of: [.images, .videos])
+            let picker = PHPickerViewController(configuration: configuration) // must be used from main thread only
+            DispatchQueue.main.async {
+                picker.delegate = self
+                self.view?.present(picker, animated: true)
+            }
+        }
+    }
+    
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true)
         

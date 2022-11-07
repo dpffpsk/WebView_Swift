@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Photos
 
+// TODO: 카메라 불러오기(버튼 동작)
 class Camera: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     let camera = UIImagePickerController()
@@ -37,7 +38,6 @@ class Camera: NSObject, UIImagePickerControllerDelegate, UINavigationControllerD
              self.present(pickerController, animated: true)
          }
      }
-     
      */
     
     private func setCamera() {
@@ -73,7 +73,6 @@ class Camera: NSObject, UIImagePickerControllerDelegate, UINavigationControllerD
         // 카메라 종료
         // picker.dismiss(animated: true, completion: nil)
         
-        
         print("=========")
         if let image = info[.originalImage] as? UIImage {
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(savedImage), nil)
@@ -98,11 +97,5 @@ class Camera: NSObject, UIImagePickerControllerDelegate, UINavigationControllerD
             self.view?.present(alert, animated: true)
 //            self.present(alert, animated: true, completion: nil)
         }
-        
-        print("")
-        print("===============================")
-        print("사진 : 권한 허용")
-        print("===============================")
-        print("")
     }
 }

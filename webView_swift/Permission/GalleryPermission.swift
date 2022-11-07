@@ -11,14 +11,14 @@ import UIKit
 
 class GalleryPermission {
     // 권한 요청
-    func requestAuthorization() {
+    func requestAuthorization(success: ((PHAuthorizationStatus) -> Void)? = nil) {
         if #available(iOS 14, *) {
             PHPhotoLibrary.requestAuthorization(for: .readWrite) { authorizationStatus in
                 switch authorizationStatus {
                 case .denied:
                     PermissionAlert().deniedPermission("사진첩", "사진")
                 case .authorized, .limited:
-                    PermissionAlert().grantedPermission("사진")
+                    success?(.authorized)
                 default:
                     print("[GalleryPermission.requestAuthorization() : \(authorizationStatus)]")
                 }
@@ -29,7 +29,7 @@ class GalleryPermission {
                 case .denied:
                     PermissionAlert().deniedPermission("사진첩", "사진")
                 case .authorized:
-                    PermissionAlert().grantedPermission("사진")
+                    success?(.authorized)
                 default:
                     print("[GalleryPermission.requestAuthorization() : \(authorizationStatus)]")
                 }

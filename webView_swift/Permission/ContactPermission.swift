@@ -6,30 +6,17 @@
 //
 
 import Foundation
+import Contacts
 
 class ContactPermission {
-    /*
-     let status = CNContactStore.authorizationStatus(for: .contacts)
-     let vc = CNContactPickerViewController()
-     vc.delegate = self
-     switch status {
-     case .authorized:
-         present(vc, animated: true, completion: nil)
-     default:
-         CNContactStore().requestAccess(for: .contacts) { [weak self] success, error in
-             guard let self = self else { return }
-             if success {
-                 DispatchQueue.main.async {
-                     self.present(vc, animated: true, completion: nil)
-                 }
-             } else {
-                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                 if UIApplication.shared.canOpenURL(url) {
-                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                 }
-             }
-         }
-     }
-     */
-
+    func requestAuthorization() {
+        CNContactStore().requestAccess(for: .contacts) { (granted, error) in
+            guard granted // 권한 부여
+            else { // 권한 거부
+                PermissionAlert().deniedPermission("연락처", "연락처")
+                return
+            }
+            PermissionAlert().grantedPermission("연락처")
+        }
+    }
 }

@@ -10,10 +10,10 @@ import AVFoundation
 
 class CameraPermission {
     // 권한 요청
-    func requestAuthorization() {
+    func requestAuthorization(success: ((Bool) -> Void)? = nil) {
         AVCaptureDevice.requestAccess(for: .video, completionHandler: { (granted: Bool) in
             if granted {
-                PermissionAlert().grantedPermission("카메라")
+                success?(granted)
             } else {
                 PermissionAlert().deniedPermission("카메라", "카메라")
             }
