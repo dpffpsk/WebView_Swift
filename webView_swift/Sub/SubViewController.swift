@@ -10,8 +10,8 @@ import UIKit
 class SubViewController: UIViewController {
 
     let subView: SubView = SubView()
-    let data = [["Basic", "Custom", "Expand"],["권한 설정"],["Camera", "Gallery"]]
-    let header = ["TableView", "Permission", "Photo"]
+    let data = [["Basic", "Custom", "Expand"],["권한 설정"],["Camera", "Gallery"],["QR&Barcode Scanner"]]
+    let header = ["TableView", "Permission", "Photo", "Scanner"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,10 +83,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-            self.navigationController?.pushViewController(vc, animated: true)
         case 1:
             vc = PermissionViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
         case 2:
             switch indexPath.row {
             case 0:
@@ -96,9 +94,14 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-            self.navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            vc = ScannerViewController()
+            self.present(vc, animated: true)
+            return
         default:
             print("empty section")
         }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

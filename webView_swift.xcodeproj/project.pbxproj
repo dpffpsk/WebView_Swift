@@ -46,6 +46,9 @@
 		B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC6028FFCA27001254FC /* SubViewController.swift */; };
 		B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC6228FFCA47001254FC /* SubView.swift */; };
 		B3B9BC68290136D5001254FC /* WKWebViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC67290136D5001254FC /* WKWebViewConfiguration.swift */; };
+		B3E893982918F683002F6AE2 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893972918F683002F6AE2 /* ScannerViewController.swift */; };
+		B3E8939A2918F694002F6AE2 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893992918F694002F6AE2 /* ScannerView.swift */; };
+		B3E8939C291A41B8002F6AE2 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8939B291A41B8002F6AE2 /* CGPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +94,9 @@
 		B3B9BC6028FFCA27001254FC /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		B3B9BC6228FFCA47001254FC /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		B3B9BC67290136D5001254FC /* WKWebViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewConfiguration.swift; sourceTree = "<group>"; };
+		B3E893972918F683002F6AE2 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		B3E893992918F694002F6AE2 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		B3E8939B291A41B8002F6AE2 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 				B3580E3B2902637700D3491E /* Table */,
 				B38916232908C509003AE1AC /* Permission */,
 				B3891629290A6314003AE1AC /* Photo */,
+				B3E893962918F392002F6AE2 /* Scanner */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -238,6 +245,7 @@
 				B3B9BC67290136D5001254FC /* WKWebViewConfiguration.swift */,
 				B36959BA290F5AE100B6E6F1 /* UIApplication.swift */,
 				B36959BC290F5B6A00B6E6F1 /* UIWindow.swift */,
+				B3E8939B291A41B8002F6AE2 /* CGPoint.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -302,6 +310,15 @@
 				B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B3E893962918F392002F6AE2 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				B3E893992918F694002F6AE2 /* ScannerView.swift */,
+				B3E893972918F683002F6AE2 /* ScannerViewController.swift */,
+			);
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,6 +398,8 @@
 				B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
 				B36959C52911130000B6E6F1 /* LocationPermission.swift in Sources */,
+				B3E8939A2918F694002F6AE2 /* ScannerView.swift in Sources */,
+				B3E893982918F683002F6AE2 /* ScannerViewController.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
 				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
 				B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */,
@@ -400,6 +419,7 @@
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
 				B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */,
 				B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */,
+				B3E8939C291A41B8002F6AE2 /* CGPoint.swift in Sources */,
 				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
 				B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */,
