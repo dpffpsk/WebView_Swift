@@ -174,11 +174,11 @@ class ScannerViewController: UIViewController {
             btn.setImage(UIImage(systemName: "xmark.circle.fill", withConfiguration: largeConfig), for: .normal)
             btn.tintColor = .white
             btn.frame = CGRectMake(200, 10, 300, 50) // x,y,너비,높이
+            btn.addTarget(self, action: #selector(close(_:)), for: .touchUpInside)
             return btn
         }()
         
         view.addSubview(closeButton)
-        closeButton.addTarget(self, action: #selector(close(_:)) , for: .touchUpInside)
     }
     
     @objc func close(_ button: UIButton) {

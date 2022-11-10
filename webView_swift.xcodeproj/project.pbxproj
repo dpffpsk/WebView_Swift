@@ -49,6 +49,11 @@
 		B3E893982918F683002F6AE2 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893972918F683002F6AE2 /* ScannerViewController.swift */; };
 		B3E8939A2918F694002F6AE2 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893992918F694002F6AE2 /* ScannerView.swift */; };
 		B3E8939C291A41B8002F6AE2 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8939B291A41B8002F6AE2 /* CGPoint.swift */; };
+		B3E893A1291B9D59002F6AE2 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893A0291B9D59002F6AE2 /* CoreDataViewController.swift */; };
+		B3E893A3291B9DAF002F6AE2 /* CoreDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893A2291B9DAF002F6AE2 /* CoreDataView.swift */; };
+		B3E893B8291CBFDB002F6AE2 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3E893B6291CBFDB002F6AE2 /* CoreData.xcdatamodeld */; };
+		B3E893BB291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893B9291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift */; };
+		B3E893BC291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893BA291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +102,11 @@
 		B3E893972918F683002F6AE2 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		B3E893992918F694002F6AE2 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		B3E8939B291A41B8002F6AE2 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		B3E893A0291B9D59002F6AE2 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
+		B3E893A2291B9DAF002F6AE2 /* CoreDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataView.swift; sourceTree = "<group>"; };
+		B3E893B7291CBFDB002F6AE2 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		B3E893B9291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageTable+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B3E893BA291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageTable+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +123,9 @@
 		B346B68928F9459B009F5533 = {
 			isa = PBXGroup;
 			children = (
+				B3E893B9291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift */,
+				B3E893BA291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift */,
+				B3E893B6291CBFDB002F6AE2 /* CoreData.xcdatamodeld */,
 				B346B69428F9459B009F5533 /* webView_swift */,
 				B346B69328F9459B009F5533 /* Products */,
 				B3B9BC4F28FCE0C3001254FC /* Frameworks */,
@@ -141,6 +154,7 @@
 				B38916232908C509003AE1AC /* Permission */,
 				B3891629290A6314003AE1AC /* Photo */,
 				B3E893962918F392002F6AE2 /* Scanner */,
+				B3E8939D291B9CBF002F6AE2 /* File */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -321,6 +335,31 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
+		B3E8939D291B9CBF002F6AE2 /* File */ = {
+			isa = PBXGroup;
+			children = (
+				B3E8939E291B9CD8002F6AE2 /* CoreData */,
+				B3E8939F291B9CE5002F6AE2 /* DataBase */,
+			);
+			path = File;
+			sourceTree = "<group>";
+		};
+		B3E8939E291B9CD8002F6AE2 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B3E893A2291B9DAF002F6AE2 /* CoreDataView.swift */,
+				B3E893A0291B9D59002F6AE2 /* CoreDataViewController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		B3E8939F291B9CE5002F6AE2 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -394,6 +433,7 @@
 				B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */,
 				B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */,
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
+				B3E893A3291B9DAF002F6AE2 /* CoreDataView.swift in Sources */,
 				B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */,
 				B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
@@ -404,6 +444,7 @@
 				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
 				B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */,
 				B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */,
+				B3E893BC291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift in Sources */,
 				B3580E402902643500D3491E /* BasicTableViewController.swift in Sources */,
 				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
 				B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */,
@@ -414,6 +455,7 @@
 				B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */,
 				B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
+				B3E893B8291CBFDB002F6AE2 /* CoreData.xcdatamodeld in Sources */,
 				B3580E442902651400D3491E /* BasicTableView.swift in Sources */,
 				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
@@ -422,12 +464,14 @@
 				B3E8939C291A41B8002F6AE2 /* CGPoint.swift in Sources */,
 				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
+				B3E893A1291B9D59002F6AE2 /* CoreDataViewController.swift in Sources */,
 				B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,
 				B3580E462902652800D3491E /* BaseView.swift in Sources */,
 				B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */,
+				B3E893BB291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift in Sources */,
 				B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */,
 				B3B9BC68290136D5001254FC /* WKWebViewConfiguration.swift in Sources */,
 				B36959BD290F5B6A00B6E6F1 /* UIWindow.swift in Sources */,
@@ -642,6 +686,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B3E893B6291CBFDB002F6AE2 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B3E893B7291CBFDB002F6AE2 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = B3E893B7291CBFDB002F6AE2 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B346B68A28F9459B009F5533 /* Project object */;
 }

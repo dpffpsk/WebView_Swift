@@ -10,8 +10,8 @@ import UIKit
 class SubViewController: UIViewController {
 
     let subView: SubView = SubView()
-    let data = [["Basic", "Custom", "Expand"],["권한 설정"],["Camera", "Gallery"],["QR&Barcode Scanner"]]
-    let header = ["TableView", "Permission", "Photo", "Scanner"]
+    let data = [["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData"]]
+    let header = ["TableView", "Permission", "Photo", "Scanner", "File"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +98,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             vc = ScannerViewController()
             self.present(vc, animated: true)
             return
+        case 4:
+            vc = CoreDataViewController()
         default:
             print("empty section")
         }
