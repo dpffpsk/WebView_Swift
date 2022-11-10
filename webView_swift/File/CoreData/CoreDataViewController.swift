@@ -12,61 +12,10 @@ import CoreData
 class CoreDataViewController: BaseViewController {
     
     let coreDataView = CoreDataView()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonAction()
-    }
-    
-    
-    // Retrieve
-    func retrieveData() {
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
-        
-        do {
-            let data = try context.fetch(ImageTable.fetchRequest())
-            print("Retrieve Data : \(data)")
-            
-            guard let imageData = data[0].imageData else { return }
-            if let uiImage: UIImage = UIImage(data: imageData) {
-                coreDataView.getImageView.image = uiImage
-            }
-
-        } catch {
-            print("Retrieve Error : \(error.localizedDescription)")
-        }
-    }
-    
-    // Create
-    func createData(imageData: Data) {
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
-        
-        let data = ImageTable(context: context)
-        data.imageData = imageData
-        
-        do {
-            try context.save()
-        } catch {
-            print("Create error : \(error.localizedDescription)")
-        }
-    }
-    
-    // delete
-    
-    // update
-    func updateData(imageData: Data) {
-        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
-        
-        do {
-            let data = try context.fetch(ImageTable.fetchRequest())
-            print("Update Data : \(data)")
-            data[0].imageData = imageData
-            
-            try? context.save()
-        } catch {
-            print("Update error : \(error.localizedDescription)")
-        }
-        
     }
     
     override func setupLayout() {
@@ -94,7 +43,6 @@ class CoreDataViewController: BaseViewController {
     
     @objc func getButtonAction(_: UIButton) {
         // 저장된 사진 불러오기
-        print("=========")
         retrieveData()
     }
     
@@ -108,8 +56,79 @@ class CoreDataViewController: BaseViewController {
         DispatchQueue.main.async {
             let picker = PHPickerViewController(configuration: configuration) // must be used from main thread only
             picker.delegate = self
-
             self.present(picker, animated: true, completion: nil)
+        }
+    }
+    
+    // CoreData CRUD
+    /// Retrieve
+    private func retrieveData() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
+        
+        do {
+            let data = try context.fetch(ImageTable.fetchRequest())
+            print("Retrieve Data : \(data)")
+            
+            guard let imageData = data[0].imageData else { return }
+            if let uiImage: UIImage = UIImage(data: imageData) {
+                coreDataView.getImageView.image = uiImage
+            }
+        } catch {
+            print("Retrieve Error : \(error.localizedDescription)")
+        }
+    }
+    
+    // Create
+    private func createData(imageData: Data) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
+        
+        let data = ImageTable(context: context)
+        data.imageData = imageData
+        
+        do {
+            try context.save()
+        } catch {
+            print("Create error : \(error.localizedDescription)")
+        }
+    }
+    
+    /// Update
+    private func updateData(imageData: Data) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
+        
+        do {
+            let data = try context.fetch(ImageTable.fetchRequest())
+            print("Update Data : \(data)")
+            data[0].imageData = imageData
+            
+            try? context.save()
+            
+        } catch {
+            print("Update error : \(error.localizedDescription)")
+        }
+    }
+    
+    /// Delete
+    private func deleteData() {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
+        
+        do {
+            let data = try context.fetch(ImageTable.fetchRequest())
+            context.delete(data[0])
+            try? context.save()
+        } catch {
+            print("Delete error : \(error.localizedDescription)")
+        }
+    }
+    
+    private func isNull(bool: ((Bool) -> Void)? = nil) {
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
+        
+        do {
+            let data = try context.fetch(ImageTable.fetchRequest())
+            bool?(data.isEmpty)
+        } catch {
+            print("Retrieve Error : \(error.localizedDescription)")
         }
     }
 }
@@ -128,9 +147,17 @@ extension CoreDataViewController: PHPickerViewControllerDelegate {
                 
                 guard let img = image as? UIImage else { return }
                 guard let img2 = img.pngData() else { return }
-                
+
                 DispatchQueue.main.async {
-                    self.updateData(imageData: img2)
+                    self.isNull { [weak self] bool in
+                        if bool {
+                            print("CoreData Create")
+                            self?.createData(imageData: img2)
+                        } else {
+                            print("CoreData Update")
+                            self?.updateData(imageData: img2)
+                        }
+                    }
                 }
             }
         } else {
