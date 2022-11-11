@@ -54,6 +54,8 @@
 		B3E893B8291CBFDB002F6AE2 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3E893B6291CBFDB002F6AE2 /* CoreData.xcdatamodeld */; };
 		B3E893BB291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893B9291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift */; };
 		B3E893BC291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893BA291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift */; };
+		B3E893BF291E3CAC002F6AE2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893BE291E3CAC002F6AE2 /* PageViewController.swift */; };
+		B3E893C1291E3DB1002F6AE2 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893C0291E3DB1002F6AE2 /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +109,8 @@
 		B3E893B7291CBFDB002F6AE2 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		B3E893B9291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageTable+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B3E893BA291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageTable+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B3E893BE291E3CAC002F6AE2 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		B3E893C0291E3DB1002F6AE2 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 				B3891629290A6314003AE1AC /* Photo */,
 				B3E893962918F392002F6AE2 /* Scanner */,
 				B3E8939D291B9CBF002F6AE2 /* File */,
+				B3E893BD291E32CA002F6AE2 /* PageView */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -360,6 +365,15 @@
 			path = DataBase;
 			sourceTree = "<group>";
 		};
+		B3E893BD291E32CA002F6AE2 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				B3E893C0291E3DB1002F6AE2 /* PageView.swift */,
+				B3E893BE291E3CAC002F6AE2 /* PageViewController.swift */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -459,6 +473,7 @@
 				B3580E442902651400D3491E /* BasicTableView.swift in Sources */,
 				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
+				B3E893BF291E3CAC002F6AE2 /* PageViewController.swift in Sources */,
 				B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */,
 				B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */,
 				B3E8939C291A41B8002F6AE2 /* CGPoint.swift in Sources */,
@@ -466,6 +481,7 @@
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
 				B3E893A1291B9D59002F6AE2 /* CoreDataViewController.swift in Sources */,
 				B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */,
+				B3E893C1291E3DB1002F6AE2 /* PageView.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,

@@ -78,7 +78,7 @@ class CoreDataViewController: BaseViewController {
         }
     }
     
-    // Create
+    /// Create
     private func createData(imageData: Data) {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
