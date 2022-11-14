@@ -55,7 +55,6 @@
 		B3E893BB291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893B9291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift */; };
 		B3E893BC291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893BA291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift */; };
 		B3E893BF291E3CAC002F6AE2 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893BE291E3CAC002F6AE2 /* PageViewController.swift */; };
-		B3E893C1291E3DB1002F6AE2 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893C0291E3DB1002F6AE2 /* PageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -110,7 +109,6 @@
 		B3E893B9291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageTable+CoreDataClass.swift"; sourceTree = "<group>"; };
 		B3E893BA291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageTable+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B3E893BE291E3CAC002F6AE2 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		B3E893C0291E3DB1002F6AE2 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,7 +366,6 @@
 		B3E893BD291E32CA002F6AE2 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
-				B3E893C0291E3DB1002F6AE2 /* PageView.swift */,
 				B3E893BE291E3CAC002F6AE2 /* PageViewController.swift */,
 			);
 			path = PageView;
@@ -481,7 +478,6 @@
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
 				B3E893A1291B9D59002F6AE2 /* CoreDataViewController.swift in Sources */,
 				B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */,
-				B3E893C1291E3DB1002F6AE2 /* PageView.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,
