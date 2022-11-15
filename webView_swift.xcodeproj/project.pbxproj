@@ -38,6 +38,7 @@
 		B389162F290A66C5003AE1AC /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389162E290A66C5003AE1AC /* CameraView.swift */; };
 		B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891630290BBEB9003AE1AC /* GalleryView.swift */; };
 		B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891632290BBECB003AE1AC /* GalleryViewController.swift */; };
+		B3A3524E29232BF100CF726B /* PageWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3524D29232BF100CF726B /* PageWebViewController.swift */; };
 		B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */; };
 		B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */; };
 		B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5928FE83B3001254FC /* IntroView.swift */; };
@@ -91,6 +92,7 @@
 		B389162E290A66C5003AE1AC /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B3891630290BBEB9003AE1AC /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		B3891632290BBECB003AE1AC /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		B3A3524D29232BF100CF726B /* PageWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageWebViewController.swift; sourceTree = "<group>"; };
 		B3B9BC5028FCE0C4001254FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				B3E893BE291E3CAC002F6AE2 /* PageViewController.swift */,
+				B3A3524D29232BF100CF726B /* PageWebViewController.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
 				B3E893BF291E3CAC002F6AE2 /* PageViewController.swift in Sources */,
+				B3A3524E29232BF100CF726B /* PageWebViewController.swift in Sources */,
 				B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */,
 				B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */,
 				B3E8939C291A41B8002F6AE2 /* CGPoint.swift in Sources */,
