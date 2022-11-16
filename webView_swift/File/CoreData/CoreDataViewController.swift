@@ -61,7 +61,7 @@ class CoreDataViewController: BaseViewController {
     }
     
     // CoreData CRUD
-    /// Retrieve
+    /// Read
     private func retrieveData() {
         guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext else { return }
         
