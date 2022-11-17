@@ -16,6 +16,7 @@ class BasicTableViewController: BaseViewController {
         super.viewDidLoad()
         
         basicTableView.tableView.dataSource = self
+        basicTableView.tableView.delegate = self
     }
 
     override func setupLayout() {
@@ -31,7 +32,7 @@ class BasicTableViewController: BaseViewController {
     }
 }
 
-extension BasicTableViewController: UITableViewDataSource {
+extension BasicTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -63,5 +64,10 @@ extension BasicTableViewController: UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 셀 선택 시 회색에서 다시 변하게 해주는 것
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -39,9 +39,10 @@
 		B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891630290BBEB9003AE1AC /* GalleryView.swift */; };
 		B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891632290BBECB003AE1AC /* GalleryViewController.swift */; };
 		B3A3524E29232BF100CF726B /* PageWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3524D29232BF100CF726B /* PageWebViewController.swift */; };
-		B3A352562924735300CF726B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A352552924735300CF726B /* DetailViewController.swift */; };
-		B3A352582924736300CF726B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A352572924736300CF726B /* DetailView.swift */; };
+		B3A352562924735300CF726B /* DataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A352552924735300CF726B /* DataBaseViewController.swift */; };
+		B3A352582924736300CF726B /* DataBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A352572924736300CF726B /* DataBaseView.swift */; };
 		B3A3525C29247C1A00CF726B /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3525B29247C1A00CF726B /* DBHelper.swift */; };
+		B3A3525E2925C93D00CF726B /* DataBaseViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3525D2925C93D00CF726B /* DataBaseViewCell.swift */; };
 		B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */; };
 		B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */; };
 		B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC5928FE83B3001254FC /* IntroView.swift */; };
@@ -96,9 +97,10 @@
 		B3891630290BBEB9003AE1AC /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		B3891632290BBECB003AE1AC /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		B3A3524D29232BF100CF726B /* PageWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageWebViewController.swift; sourceTree = "<group>"; };
-		B3A352552924735300CF726B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		B3A352572924736300CF726B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		B3A352552924735300CF726B /* DataBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseViewController.swift; sourceTree = "<group>"; };
+		B3A352572924736300CF726B /* DataBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseView.swift; sourceTree = "<group>"; };
 		B3A3525B29247C1A00CF726B /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		B3A3525D2925C93D00CF726B /* DataBaseViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseViewCell.swift; sourceTree = "<group>"; };
 		B3B9BC5028FCE0C4001254FC /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B3B9BC5328FD357B001254FC /* MainViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
 		B3B9BC5528FD3C93001254FC /* MainViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
@@ -367,8 +369,9 @@
 		B3E8939F291B9CE5002F6AE2 /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				B3A352572924736300CF726B /* DetailView.swift */,
-				B3A352552924735300CF726B /* DetailViewController.swift */,
+				B3A352572924736300CF726B /* DataBaseView.swift */,
+				B3A3525D2925C93D00CF726B /* DataBaseViewCell.swift */,
+				B3A352552924735300CF726B /* DataBaseViewController.swift */,
 				B3A3525B29247C1A00CF726B /* DBHelper.swift */,
 			);
 			path = DataBase;
@@ -470,7 +473,7 @@
 				B3E893BC291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift in Sources */,
 				B3580E402902643500D3491E /* BasicTableViewController.swift in Sources */,
 				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
-				B3A352582924736300CF726B /* DetailView.swift in Sources */,
+				B3A352582924736300CF726B /* DataBaseView.swift in Sources */,
 				B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */,
 				B3B9BC5C28FF80BC001254FC /* MainView.swift in Sources */,
 				B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */,
@@ -479,12 +482,13 @@
 				B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */,
 				B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
-				B3A352562924735300CF726B /* DetailViewController.swift in Sources */,
+				B3A352562924735300CF726B /* DataBaseViewController.swift in Sources */,
 				B3E893B8291CBFDB002F6AE2 /* CoreData.xcdatamodeld in Sources */,
 				B3580E442902651400D3491E /* BasicTableView.swift in Sources */,
 				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
 				B3E893BF291E3CAC002F6AE2 /* PageViewController.swift in Sources */,
+				B3A3525E2925C93D00CF726B /* DataBaseViewCell.swift in Sources */,
 				B3A3524E29232BF100CF726B /* PageWebViewController.swift in Sources */,
 				B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */,
 				B389162D290A63D7003AE1AC /* CameraViewController.swift in Sources */,

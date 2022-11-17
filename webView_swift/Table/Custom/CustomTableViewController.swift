@@ -16,6 +16,7 @@ class CustomTableViewController: BaseViewController {
         super.viewDidLoad()
         
         customTableview.tableView.dataSource = self
+        customTableview.tableView.delegate = self
     }
     
     override func setupLayout() {
@@ -31,7 +32,7 @@ class CustomTableViewController: BaseViewController {
                                                 , constant: 0).isActive = true
     }
 }
-extension CustomTableViewController: UITableViewDataSource {
+extension CustomTableViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
@@ -41,6 +42,11 @@ extension CustomTableViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 셀 선택 시 회색에서 다시 변하게 해주는 것
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 

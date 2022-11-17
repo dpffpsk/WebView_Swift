@@ -11,20 +11,17 @@ import SQLite3
 struct DataModel: Codable {
     var id: Int
     var name: String
-    var age: Int
+    var age: Int?
 }
 
 class DBHelper {
     
     static let shared = DBHelper()
-    
     var db: OpaquePointer? // DB를 가르키는 포인터
-    
     let databaseName: String = "testdb.sqlite" // DB이름("DB이름.sqlite" 형식으로 작성)
     
     init() {
         self.db = createDB()
-        
     }
     
     deinit {
@@ -60,10 +57,7 @@ class DBHelper {
         var statement: OpaquePointer? = nil
         
         let createQuery = """
-                        CREATE TABLE IF NOT EXISTS \(tableName)(
-                            id INTEGER NOT NULL AUTOINCREMENT,
-                            name TEXT NOT NULL,
-                            age INT);
+                        CREATE TABLE IF NOT EXISTS \(tableName)(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, age INTEGER);
                         """
             
         // sqlite3_exec() = sqlite3_prepare_v2(), sqlite3_step(), sqlite3_finalize()
@@ -99,7 +93,7 @@ class DBHelper {
             // sqlite3_bind_text의 두 번째 인자는 values(?, ?, ?) 에서 몇 번째 ?에 넣을거냐를 지정
             // id는 AUTOINCREMENT
             // sqlite3_bind_text()는 마지막 인자로 메모리 관리 방식을 지정
-            sqlite3_bind_text(statement, 2, name, -1, nil)
+            sqlite3_bind_text(statement, 2, name, -1, unsafeBitCast(-1, to: sqlite3_destructor_type.self))
             sqlite3_bind_int(statement, 3, Int32(age))
         } else {
             print("Sqlite3_prepare failure while inserting data")
@@ -108,6 +102,7 @@ class DBHelper {
         if sqlite3_step(statement) == SQLITE_DONE {
             print("Inserting data has been succesfully done")
         } else {
+            print(":: \(sqlite3_step(statement))")
             print("Sqlite3_step failure while inserting data")
         }
         
@@ -140,7 +135,7 @@ class DBHelper {
     
     private func onSQLErrorPrintErrorMessage(_ db: OpaquePointer?) {
         let errorMessage = String(cString: sqlite3_errmsg(db))
-        print("Error preparing update: \(errorMessage)")
+        print("Error : \(errorMessage)")
         return
     }
     
@@ -149,7 +144,7 @@ class DBHelper {
         var statement: OpaquePointer?
         
         // string은 ''로 감싸줘야 함
-        let updateQuery = "UPDATE \(tableName) SET my_name = '\(name)', my_age = \(age) WHERE id == \(id)"
+        let updateQuery = "UPDATE \(tableName) SET name = '\(name)', age = \(age) WHERE id == \(id)"
 
         if sqlite3_prepare(self.db, updateQuery, -1, &statement, nil) != SQLITE_OK {
             onSQLErrorPrintErrorMessage(self.db)

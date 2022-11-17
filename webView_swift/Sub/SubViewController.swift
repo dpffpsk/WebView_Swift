@@ -10,7 +10,7 @@ import UIKit
 class SubViewController: UIViewController {
 
     let subView: SubView = SubView()
-    let data = [["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData"], ["PageView"]]
+    let data = [["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData", "DataBase(SQLite)"], ["PageView"]]
     let header = ["TableView", "Permission", "Photo", "Scanner", "File", "PageView"]
     
     override func viewDidLoad() {
@@ -69,6 +69,9 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 셀 선택 시 회색에서 다시 변하게 해주는 것
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         var vc = UIViewController()
 
         switch indexPath.section {
@@ -99,7 +102,14 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             self.present(vc, animated: true)
             return
         case 4:
-            vc = CoreDataViewController()
+            switch indexPath.row {
+            case 0:
+                vc = CoreDataViewController()
+            case 1:
+                vc = DataBaseViewController()
+            default:
+                print("empty vc")
+            }
         case 5:
             vc = PageViewController()
         default:
