@@ -35,6 +35,7 @@ class DBHelper {
         do {
             // 저장 경로
             // 파일매니저객체 > 앱 내 디렉토리 검색 > "testdb.sqlite" 파일의 디렉토리 획득
+            // 파일을 문서디렉토리(documentDirectory)에 저장하는 이유 : 일반성 (iCloud를 사용할 때도 백업 대상이 되는 디렉토리)
             let dbPath: String = try FileManager.default.url(for: .documentDirectory,
                                                             in: .userDomainMask,
                                                             appropriateFor: nil,
