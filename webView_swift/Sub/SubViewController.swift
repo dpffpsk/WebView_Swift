@@ -10,8 +10,8 @@ import UIKit
 class SubViewController: UIViewController {
 
     let subView: SubView = SubView()
-    let data = [["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData", "DataBase(SQLite)"], ["PageView"]]
-    let header = ["TableView", "Permission", "Photo", "Scanner", "File", "PageView"]
+    let data = [["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["Encrypt&Decrypt"]]
+    let header = ["TableView", "Permission", "Photo", "Scanner", "File", "PageView", "암,복호화"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -112,6 +112,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             }
         case 5:
             vc = PageViewController()
+        case 6:
+            vc = EncryptionViewController()
         default:
             print("empty section")
         }

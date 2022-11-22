@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B31E3948292C8E730039417A /* EncryptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3947292C8E730039417A /* EncryptionView.swift */; };
+		B31E394A292C8E840039417A /* EncryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3949292C8E840039417A /* EncryptionViewController.swift */; };
+		B31E394D292C924E0039417A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B31E394C292C924E0039417A /* CryptoSwift */; };
 		B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69528F9459B009F5533 /* AppDelegate.swift */; };
 		B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69728F9459B009F5533 /* SceneDelegate.swift */; };
 		B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69928F9459B009F5533 /* MainViewController.swift */; };
@@ -51,6 +54,7 @@
 		B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC6028FFCA27001254FC /* SubViewController.swift */; };
 		B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC6228FFCA47001254FC /* SubView.swift */; };
 		B3B9BC68290136D5001254FC /* WKWebViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B9BC67290136D5001254FC /* WKWebViewConfiguration.swift */; };
+		B3DDEF9D292C5CCA00D406A4 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DDEF9C292C5CCA00D406A4 /* Alert.swift */; };
 		B3E893982918F683002F6AE2 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893972918F683002F6AE2 /* ScannerViewController.swift */; };
 		B3E8939A2918F694002F6AE2 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E893992918F694002F6AE2 /* ScannerView.swift */; };
 		B3E8939C291A41B8002F6AE2 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8939B291A41B8002F6AE2 /* CGPoint.swift */; };
@@ -63,6 +67,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B31E3947292C8E730039417A /* EncryptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionView.swift; sourceTree = "<group>"; };
+		B31E3949292C8E840039417A /* EncryptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionViewController.swift; sourceTree = "<group>"; };
 		B346B69228F9459B009F5533 /* webView_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webView_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B346B69528F9459B009F5533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B346B69728F9459B009F5533 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,7 @@
 		B3B9BC6028FFCA27001254FC /* SubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		B3B9BC6228FFCA47001254FC /* SubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubView.swift; sourceTree = "<group>"; };
 		B3B9BC67290136D5001254FC /* WKWebViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewConfiguration.swift; sourceTree = "<group>"; };
+		B3DDEF9C292C5CCA00D406A4 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B3E893972918F683002F6AE2 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		B3E893992918F694002F6AE2 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		B3E8939B291A41B8002F6AE2 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
@@ -126,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B31E394D292C924E0039417A /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +176,8 @@
 				B3E893962918F392002F6AE2 /* Scanner */,
 				B3E8939D291B9CBF002F6AE2 /* File */,
 				B3E893BD291E32CA002F6AE2 /* PageView */,
+				B3DDEF9B292C5C6B00D406A4 /* Alert */,
+				B3DDEFA0292C8DBF00D406A4 /* Encryption */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -339,6 +349,23 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		B3DDEF9B292C5C6B00D406A4 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B3DDEF9C292C5CCA00D406A4 /* Alert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		B3DDEFA0292C8DBF00D406A4 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				B31E3947292C8E730039417A /* EncryptionView.swift */,
+				B31E3949292C8E840039417A /* EncryptionViewController.swift */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
 		B3E893962918F392002F6AE2 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,6 +429,9 @@
 			dependencies = (
 			);
 			name = webView_swift;
+			packageProductDependencies = (
+				B31E394C292C924E0039417A /* CryptoSwift */,
+			);
 			productName = webView_swift;
 			productReference = B346B69228F9459B009F5533 /* webView_swift.app */;
 			productType = "com.apple.product-type.application";
@@ -430,6 +460,9 @@
 				Base,
 			);
 			mainGroup = B346B68928F9459B009F5533;
+			packageReferences = (
+				B31E394B292C924E0039417A /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+			);
 			productRefGroup = B346B69328F9459B009F5533 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -457,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */,
+				B31E394A292C8E840039417A /* EncryptionViewController.swift in Sources */,
 				B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */,
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
 				B3E893A3291B9DAF002F6AE2 /* CoreDataView.swift in Sources */,
@@ -467,6 +501,7 @@
 				B3E8939A2918F694002F6AE2 /* ScannerView.swift in Sources */,
 				B3E893982918F683002F6AE2 /* ScannerViewController.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
+				B3DDEF9D292C5CCA00D406A4 /* Alert.swift in Sources */,
 				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
 				B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */,
 				B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */,
@@ -479,6 +514,7 @@
 				B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */,
 				B3580E482902653A00D3491E /* BaseViewController.swift in Sources */,
 				B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */,
+				B31E3948292C8E730039417A /* EncryptionView.swift in Sources */,
 				B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */,
 				B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
@@ -718,6 +754,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B31E394B292C924E0039417A /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B31E394C292C924E0039417A /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B31E394B292C924E0039417A /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B3E893B6291CBFDB002F6AE2 /* CoreData.xcdatamodeld */ = {

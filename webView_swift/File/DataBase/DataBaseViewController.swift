@@ -45,6 +45,7 @@ class DataBaseViewController: BaseViewController {
         dbHelper.createTable(tableName: tableName)
         self.dataModel = dbHelper.readData(tableName: tableName)
         self.dataBaseView.dataTableView.reloadData()
+        Alert().show(message: "\(tableName) 테이블이 생성되었습니다.")
     }
     
     @objc func insertData(_: UIButton) {
@@ -52,24 +53,28 @@ class DataBaseViewController: BaseViewController {
         dbHelper.insertData(tableName: tableName, name: "팬텀", age: 5)
         self.dataModel = dbHelper.readData(tableName: tableName)
         self.dataBaseView.dataTableView.reloadData()
+        Alert().show(message: "\(tableName) 테이블에 데이터가 추가되었습니다.")
     }
     
     @objc func updateData(_: UIButton) {
         dbHelper.updateData(tableName: tableName, id: 1, name: "피카츄", age: 50)
         self.dataModel = dbHelper.readData(tableName: tableName)
         self.dataBaseView.dataTableView.reloadData()
+        Alert().show(message: "\(tableName) 테이블의 데이터가 수정되었습니다.")
     }
     
     @objc func deleteData(_: UIButton) {
         dbHelper.deleteData(tableName: tableName, id: 1)
         self.dataModel = dbHelper.readData(tableName: tableName)
         self.dataBaseView.dataTableView.reloadData()
+        Alert().show(message: "\(tableName) 테이블의 데이터가 삭제되었습니다.")
     }
     
     @objc func dropTable(_: UIButton) {
         dbHelper.dropTable(tableName: tableName)
         self.dataModel = dbHelper.readData(tableName: tableName)
         self.dataBaseView.dataTableView.reloadData()
+        Alert().show(message: "\(tableName) 테이블이 삭제되었습니다.")
     }
 }
 

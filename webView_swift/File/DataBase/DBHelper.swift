@@ -49,7 +49,6 @@ class DBHelper {
         } catch {
             print("Error while creating Database- \(error.localizedDescription)")
         }
-        
         return nil
     }
     
@@ -103,7 +102,6 @@ class DBHelper {
         if sqlite3_step(statement) == SQLITE_DONE {
             print("Inserting data has been succesfully done")
         } else {
-            print(":: \(sqlite3_step(statement))")
             print("Sqlite3_step failure while inserting data")
         }
         
