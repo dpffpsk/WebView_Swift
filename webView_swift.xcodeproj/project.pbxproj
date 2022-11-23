@@ -10,6 +10,9 @@
 		B31E3948292C8E730039417A /* EncryptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3947292C8E730039417A /* EncryptionView.swift */; };
 		B31E394A292C8E840039417A /* EncryptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3949292C8E840039417A /* EncryptionViewController.swift */; };
 		B31E394D292C924E0039417A /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B31E394C292C924E0039417A /* CryptoSwift */; };
+		B31E3950292E02AC0039417A /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E394F292E02AC0039417A /* PresentationViewController.swift */; };
+		B31E3952292E02BB0039417A /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3951292E02BB0039417A /* PresentationView.swift */; };
+		B31E3954292E08F50039417A /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3953292E08F50039417A /* NextViewController.swift */; };
 		B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69528F9459B009F5533 /* AppDelegate.swift */; };
 		B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69728F9459B009F5533 /* SceneDelegate.swift */; };
 		B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69928F9459B009F5533 /* MainViewController.swift */; };
@@ -69,6 +72,9 @@
 /* Begin PBXFileReference section */
 		B31E3947292C8E730039417A /* EncryptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionView.swift; sourceTree = "<group>"; };
 		B31E3949292C8E840039417A /* EncryptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionViewController.swift; sourceTree = "<group>"; };
+		B31E394F292E02AC0039417A /* PresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
+		B31E3951292E02BB0039417A /* PresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
+		B31E3953292E08F50039417A /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		B346B69228F9459B009F5533 /* webView_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webView_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B346B69528F9459B009F5533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B346B69728F9459B009F5533 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +146,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B31E394E292E028B0039417A /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B31E3951292E02BB0039417A /* PresentationView.swift */,
+				B31E394F292E02AC0039417A /* PresentationViewController.swift */,
+				B31E3953292E08F50039417A /* NextViewController.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		B346B68928F9459B009F5533 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +194,7 @@
 				B3E893BD291E32CA002F6AE2 /* PageView */,
 				B3DDEF9B292C5C6B00D406A4 /* Alert */,
 				B3DDEFA0292C8DBF00D406A4 /* Encryption */,
+				B31E394E292E028B0039417A /* Presentation */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -505,6 +522,7 @@
 				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
 				B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */,
 				B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */,
+				B31E3954292E08F50039417A /* NextViewController.swift in Sources */,
 				B3E893BC291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift in Sources */,
 				B3580E402902643500D3491E /* BasicTableViewController.swift in Sources */,
 				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
@@ -519,7 +537,9 @@
 				B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */,
 				B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */,
 				B3A352562924735300CF726B /* DataBaseViewController.swift in Sources */,
+				B31E3950292E02AC0039417A /* PresentationViewController.swift in Sources */,
 				B3E893B8291CBFDB002F6AE2 /* CoreData.xcdatamodeld in Sources */,
+				B31E3952292E02BB0039417A /* PresentationView.swift in Sources */,
 				B3580E442902651400D3491E /* BasicTableView.swift in Sources */,
 				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,

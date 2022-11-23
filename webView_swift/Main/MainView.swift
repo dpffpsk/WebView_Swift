@@ -10,16 +10,7 @@ import UIKit
 class MainView: UIView {
 
     lazy var webView: WebView = WebView()
-    
-    let descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Main"
-        label.textAlignment = .center
-        label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        return label
-    }()
-    
+
     var nativeButton: UIButton = {
         let btn = UIButton()
         btn.setTitle("Native", for: .normal)
@@ -28,7 +19,6 @@ class MainView: UIView {
         return btn
     }()
 
-    
     init() {
         super.init(frame: .zero)
         
@@ -43,7 +33,7 @@ class MainView: UIView {
     
     func setupLayout() {
         addSubview(webView)
-        addSubview(nativeButton)
+//        addSubview(nativeButton)
     }
     
     func setupConstraints() {
@@ -51,15 +41,14 @@ class MainView: UIView {
         webView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         webView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         webView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        nativeButton.translatesAutoresizingMaskIntoConstraints = false
-        nativeButton.topAnchor.constraint(equalTo: self.webView.bottomAnchor, constant: 15).isActive = true
-        nativeButton.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        nativeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        nativeButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        nativeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-
-        
+//        nativeButton.translatesAutoresizingMaskIntoConstraints = false
+//        nativeButton.topAnchor.constraint(equalTo: self.webView.bottomAnchor, constant: 15).isActive = true
+//        nativeButton.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//        nativeButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+//        nativeButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        nativeButton.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     
     func loadWebView() {

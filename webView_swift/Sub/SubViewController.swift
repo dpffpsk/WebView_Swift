@@ -8,10 +8,12 @@
 import UIKit
 
 class SubViewController: UIViewController {
-
+    
+    let introView = IntroView()
     let subView: SubView = SubView()
-    let data = [["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["Encrypt&Decrypt"]]
-    let header = ["TableView", "Permission", "Photo", "Scanner", "File", "PageView", "암,복호화"]
+    
+    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation"]
+    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,12 @@ class SubViewController: UIViewController {
         
         setupLayout()
         setupConstraints()
+        setIntro()
     }
 
     func setupLayout() {
         view.addSubview(subView)
+        view.addSubview(introView)
     }
     
     func setupConstraints() {
@@ -35,6 +39,24 @@ class SubViewController: UIViewController {
         subView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         subView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         subView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        
+        introView.translatesAutoresizingMaskIntoConstraints = false
+        introView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        introView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        introView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        introView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
+    
+    func setIntro() {
+        Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(introTimer), userInfo: nil, repeats: false)
+    }
+    
+    @objc func introTimer() {
+        view.subviews.forEach { view in
+            if view == introView {
+                view.removeFromSuperview()
+            }
+        }
     }
 }
 
@@ -76,6 +98,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
 
         switch indexPath.section {
         case 0:
+            vc = MainViewController()
+        case 1:
             switch indexPath.row {
             case 0:
                 vc = BasicTableViewController()
@@ -86,9 +110,9 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-        case 1:
-            vc = PermissionViewController()
         case 2:
+            vc = PermissionViewController()
+        case 3:
             switch indexPath.row {
             case 0:
                 vc = CameraViewController()
@@ -97,11 +121,11 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-        case 3:
+        case 4:
             vc = ScannerViewController()
             self.present(vc, animated: true)
             return
-        case 4:
+        case 5:
             switch indexPath.row {
             case 0:
                 vc = CoreDataViewController()
@@ -110,10 +134,12 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-        case 5:
-            vc = PageViewController()
         case 6:
+            vc = PageViewController()
+        case 7:
             vc = EncryptionViewController()
+        case 8:
+            vc = PresentationViewController()
         default:
             print("empty section")
         }

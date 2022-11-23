@@ -25,12 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        self.window = window
 //
 //        window.makeKeyAndVisible()
-//
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let navigationController = UINavigationController(rootViewController: MainViewController())
+        let navigationController = UINavigationController(rootViewController: SubViewController())
         window?.rootViewController = navigationController // 루트 뷰컨트롤러 생성
         window?.makeKeyAndVisible()
     }

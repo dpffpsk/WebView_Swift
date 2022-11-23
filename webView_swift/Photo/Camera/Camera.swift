@@ -50,7 +50,7 @@ class Camera: NSObject, UIImagePickerControllerDelegate, UINavigationControllerD
     
     func open() {
         DispatchQueue.main.async {
-            self.view?.present(self.self.camera, animated: true, completion: nil)
+            self.view?.present(self.camera, animated: true, completion: nil)
         }
     }
     
