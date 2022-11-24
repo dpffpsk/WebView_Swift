@@ -13,6 +13,8 @@
 		B31E3950292E02AC0039417A /* PresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E394F292E02AC0039417A /* PresentationViewController.swift */; };
 		B31E3952292E02BB0039417A /* PresentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3951292E02BB0039417A /* PresentationView.swift */; };
 		B31E3954292E08F50039417A /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3953292E08F50039417A /* NextViewController.swift */; };
+		B31E3957292F32EA0039417A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3956292F32EA0039417A /* ShareViewController.swift */; };
+		B31E3959292F32FA0039417A /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E3958292F32FA0039417A /* ShareView.swift */; };
 		B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69528F9459B009F5533 /* AppDelegate.swift */; };
 		B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69728F9459B009F5533 /* SceneDelegate.swift */; };
 		B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69928F9459B009F5533 /* MainViewController.swift */; };
@@ -75,6 +77,8 @@
 		B31E394F292E02AC0039417A /* PresentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationViewController.swift; sourceTree = "<group>"; };
 		B31E3951292E02BB0039417A /* PresentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationView.swift; sourceTree = "<group>"; };
 		B31E3953292E08F50039417A /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		B31E3956292F32EA0039417A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		B31E3958292F32FA0039417A /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		B346B69228F9459B009F5533 /* webView_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webView_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B346B69528F9459B009F5533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B346B69728F9459B009F5533 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +160,15 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		B31E3955292F32D20039417A /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				B31E3958292F32FA0039417A /* ShareView.swift */,
+				B31E3956292F32EA0039417A /* ShareViewController.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		B346B68928F9459B009F5533 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +208,7 @@
 				B3DDEF9B292C5C6B00D406A4 /* Alert */,
 				B3DDEFA0292C8DBF00D406A4 /* Encryption */,
 				B31E394E292E028B0039417A /* Presentation */,
+				B31E3955292F32D20039417A /* Share */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -512,6 +526,7 @@
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
 				B3E893A3291B9DAF002F6AE2 /* CoreDataView.swift in Sources */,
 				B36959BF290FA19100B6E6F1 /* CameraPermission.swift in Sources */,
+				B31E3959292F32FA0039417A /* ShareView.swift in Sources */,
 				B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */,
 				B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */,
 				B36959C52911130000B6E6F1 /* LocationPermission.swift in Sources */,
@@ -552,6 +567,7 @@
 				B3B9BC6128FFCA27001254FC /* SubViewController.swift in Sources */,
 				B3B9BC5628FD3C93001254FC /* MainViewController+WKUIDelegate.swift in Sources */,
 				B3E893A1291B9D59002F6AE2 /* CoreDataViewController.swift in Sources */,
+				B31E3957292F32EA0039417A /* ShareViewController.swift in Sources */,
 				B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,

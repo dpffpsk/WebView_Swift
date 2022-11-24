@@ -79,7 +79,7 @@ class EncryptionViewController: BaseViewController {
         encryptionView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         encryptionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-    
+
     private func buttonAction() {
         self.encryptionView.encryptButton.addTarget(self, action: #selector(encrypt), for: .touchUpInside)
         self.encryptionView.decryptButton.addTarget(self, action: #selector(decrypt), for: .touchUpInside)
