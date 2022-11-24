@@ -2,7 +2,7 @@
 //  PresentationViewController.swift
 //  webView_swift
 //
-//  Created by wony on 2022/11/23.
+//  Created by wons on 2022/11/23.
 //
 
 import UIKit
@@ -45,20 +45,29 @@ class PresentationViewController: BaseViewController {
     }
     
     @objc func presentAction(_: UIButton) {
-//        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "nextVC") else {return}
-//
-//        nextVC.modalPresentationStyle = presentSet[present]
-//        nextVC.modalTransitionStyle = transSet[trans]
-//
-//        nextVC.view.alpha = 0.5
-//
-//        self.present(nextVC, animated: true)
+        /*
+         * UIModalTransitionStyle
+         * - coverVertical : 아래에서 위
+         * - crossDcissolve : 화면 교차
+         * - flipHorizontal : 카드 뒤집히는 효과
+         * - partialCurl : 종이 넘김 효과
+         */
         
-
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let main = storyboard.instantiateViewController(withIdentifier: "MainStoryBoard") as! UINavigationController
-        main.modalPresentationStyle = .fullScreen
-        present(main, animated: true, completion: nil)
+        /*
+         * UIModalPresentationStyle
+         * - currentContext
+         * - fullScreen
+         * - overCurrentContext
+         * - overFullScreen
+         * - formSheet
+         * - pageSheet
+         * - popover
+         */
+        
+        let nextVC = NextViewController()
+        nextVC.modalTransitionStyle = .flipHorizontal
+        nextVC.modalPresentationStyle = .popover
+        self.present(nextVC, animated: true)
     }
 }
 
