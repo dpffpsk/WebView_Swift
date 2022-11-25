@@ -13,7 +13,7 @@ class SubViewController: UIViewController {
     let subView: SubView = SubView()
     
     let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share"]
-    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"]]
+    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +122,15 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
                 print("empty vc")
             }
         case 4:
-            vc = ScannerViewController()
+            switch indexPath.row {
+            case 0:
+                vc = ScannerViewController()
+            case 1:
+                vc = QRCodeViewController()
+            default:
+                print("empty vc")
+            }
+            
             self.present(vc, animated: true)
             return
         case 5:
