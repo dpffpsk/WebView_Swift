@@ -40,6 +40,8 @@
 		B36959C52911130000B6E6F1 /* LocationPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C42911130000B6E6F1 /* LocationPermission.swift */; };
 		B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C6291114B900B6E6F1 /* ContactPermission.swift */; };
 		B382D60829343B030074B15E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B382D60A29343B030074B15E /* Localizable.strings */; };
+		B382D6132934A14E0074B15E /* BiometricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382D6122934A14E0074B15E /* BiometricsView.swift */; };
+		B382D6152934A15F0074B15E /* BiometricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382D6142934A15F0074B15E /* BiometricsViewController.swift */; };
 		B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161929076B4B003AE1AC /* CustomTableViewCell.swift */; };
 		B389161C29079FA8003AE1AC /* ExpandableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161B29079FA8003AE1AC /* ExpandableViewController.swift */; };
 		B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389161D29079FF0003AE1AC /* ExpandableTableView.swift */; };
@@ -112,6 +114,8 @@
 		B36959C6291114B900B6E6F1 /* ContactPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPermission.swift; sourceTree = "<group>"; };
 		B382D60929343B030074B15E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B382D60B29343B200074B15E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B382D6122934A14E0074B15E /* BiometricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsView.swift; sourceTree = "<group>"; };
+		B382D6142934A15F0074B15E /* BiometricsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsViewController.swift; sourceTree = "<group>"; };
 		B389161929076B4B003AE1AC /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B389161B29079FA8003AE1AC /* ExpandableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableViewController.swift; sourceTree = "<group>"; };
 		B389161D29079FF0003AE1AC /* ExpandableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableTableView.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				B31E394E292E028B0039417A /* Presentation */,
 				B31E3955292F32D20039417A /* Share */,
 				B31E396B29309F100039417A /* Localization */,
+				B382D60F29344E370074B15E /* Certificate */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
 				B346B6A328F9459D009F5533 /* Info.plist */,
@@ -276,6 +281,31 @@
 				B389161B29079FA8003AE1AC /* ExpandableViewController.swift */,
 			);
 			path = Expandable;
+			sourceTree = "<group>";
+		};
+		B382D60F29344E370074B15E /* Certificate */ = {
+			isa = PBXGroup;
+			children = (
+				B382D61029344E4C0074B15E /* Biometrics */,
+				B382D61129344E510074B15E /* Pattern */,
+			);
+			path = Certificate;
+			sourceTree = "<group>";
+		};
+		B382D61029344E4C0074B15E /* Biometrics */ = {
+			isa = PBXGroup;
+			children = (
+				B382D6122934A14E0074B15E /* BiometricsView.swift */,
+				B382D6142934A15F0074B15E /* BiometricsViewController.swift */,
+			);
+			path = Biometrics;
+			sourceTree = "<group>";
+		};
+		B382D61129344E510074B15E /* Pattern */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pattern;
 			sourceTree = "<group>";
 		};
 		B38916232908C509003AE1AC /* Permission */ = {
@@ -573,6 +603,7 @@
 				B31E39712930B3A20039417A /* QRCodeView.swift in Sources */,
 				B3B9BC5C28FF80BC001254FC /* MainView.swift in Sources */,
 				B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */,
+				B382D6132934A14E0074B15E /* BiometricsView.swift in Sources */,
 				B3580E482902653A00D3491E /* BaseViewController.swift in Sources */,
 				B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */,
 				B31E3948292C8E730039417A /* EncryptionView.swift in Sources */,
@@ -608,6 +639,7 @@
 				B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */,
 				B3A3525C29247C1A00CF726B /* DBHelper.swift in Sources */,
 				B3B9BC68290136D5001254FC /* WKWebViewConfiguration.swift in Sources */,
+				B382D6152934A15F0074B15E /* BiometricsViewController.swift in Sources */,
 				B36959BD290F5B6A00B6E6F1 /* UIWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

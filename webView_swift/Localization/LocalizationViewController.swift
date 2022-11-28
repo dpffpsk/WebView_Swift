@@ -62,6 +62,11 @@ class LocalizationViewController: BaseViewController {
         self.localizationView.textLabel1.text = bundle?.localizedString(forKey: "Hello", value: nil, table: nil)
         self.localizationView.textLabel2.text = bundle?.localizedString(forKey: "Welcome", value: nil, table: nil)
         self.localizationView.textLabel3.text = bundle?.localizedString(forKey: "Thank", value: nil, table: nil)
+        
+        // .plist 파일일 경우
+        // guard let url = Bundle.main.url(forResource: ".plist name", withExtension: "plist") else { return}
+        // guard let dictionary = NSDictionary(contentsOf: url) else { return }
+        // let value = dictionary["key"] as? String
     }
 }
 
