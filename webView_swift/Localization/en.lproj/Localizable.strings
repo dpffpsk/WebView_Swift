@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  webView_swift
+
+  Created by wony on 2022/11/28.
+  
+*/
+
+"Hello" = "Hello";
+"Welcome" = "Welcome";
+"Thank" = "Thank you";
+

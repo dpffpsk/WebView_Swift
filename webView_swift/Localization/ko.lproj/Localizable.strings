@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  webView_swift
+
+  Created by wony on 2022/11/28.
+  
+*/
+
+"Hello" = "안녕하세요.";
+"Welcome" = "환영합니다.";
+"Thank" = "감사합니다.";

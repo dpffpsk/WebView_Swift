@@ -13,6 +13,7 @@ class LocalizationView: BaseView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 17)
+        label.text = "textLabel1"
         return label
     }()
     
@@ -20,6 +21,7 @@ class LocalizationView: BaseView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 17)
+        label.text = "textLabel2"
         return label
     }()
     
@@ -27,6 +29,7 @@ class LocalizationView: BaseView {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 17)
+        label.text = "textLabel3"
         return label
     }()
     
@@ -50,7 +53,7 @@ class LocalizationView: BaseView {
     
     lazy var englishButton: UIButton = {
         let btn = UIButton()
-        btn.setTitle("영어", for: .normal)
+        btn.setTitle("English", for: .normal)
         btn.backgroundColor = .systemBlue
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
@@ -80,14 +83,14 @@ class LocalizationView: BaseView {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         labelStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
         labelStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
-        labelStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 30).isActive = true
+        labelStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30).isActive = true
         labelStackView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         labelStackView.widthAnchor.constraint(equalToConstant: 150).isActive = true
         
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         buttonStackView.topAnchor.constraint(equalTo: self.labelStackView.bottomAnchor, constant: 50).isActive = true
         buttonStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30).isActive = true
-        buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 30).isActive = true
+        buttonStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30).isActive = true
         buttonStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         buttonStackView.widthAnchor.constraint(equalToConstant: 150).isActive = true
     }

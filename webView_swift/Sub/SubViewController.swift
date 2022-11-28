@@ -12,8 +12,8 @@ class SubViewController: UIViewController {
     let introView = IntroView()
     let subView: SubView = SubView()
     
-    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share"]
-    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"]]
+    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share", "Localization"]
+    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"], ["다국어처리"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -150,6 +150,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             vc = PresentationViewController()
         case 9:
             vc = ShareViewController()
+        case 10:
+            vc = LocalizationViewController()
         default:
             print("empty section")
         }

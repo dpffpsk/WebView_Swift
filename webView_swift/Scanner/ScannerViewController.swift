@@ -206,7 +206,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             }
          */
         if let outputValue = metaObject.stringValue {
-            let alert = UIAlertController(title: "Scanner", message: "TYPE : \(metaObject.type)\nVALUE : \(outputValue)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Scanner", message: "TYPE : \(metaObject.type) \n VALUE : \(outputValue)", preferredStyle: .alert)
             print("scanner : \(outputValue)")
             
             let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
