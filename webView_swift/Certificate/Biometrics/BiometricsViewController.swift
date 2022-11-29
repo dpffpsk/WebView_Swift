@@ -10,6 +10,7 @@ import LocalAuthentication
 
 class BiometricsViewController: BaseViewController {
 
+    // 생체인증(faceID, fingerprint)
     let authContext = LAContext()
     
     override func viewDidLoad() {
