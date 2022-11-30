@@ -52,10 +52,10 @@ class LocalizationViewController: BaseViewController {
     }
     
     func setLanguage() {
-        //설정된 언어 코드 가져오기
+        // 설정된 언어 코드 가져오기
         let language = UserDefaults.standard.string(forKey: "Localization")
         
-        //설정된 언어 파일 가져오기
+        // 설정된 언어 파일 가져오기
         let path = Bundle.main.path(forResource: language, ofType: "lproj")
         let bundle = Bundle(path: path!)
         
