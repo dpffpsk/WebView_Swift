@@ -12,8 +12,8 @@ class SubViewController: UIViewController {
     let introView = IntroView()
     let subView: SubView = SubView()
     
-    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share", "Localization"]
-    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"], ["다국어처리"]]
+    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share", "Localization", "Authorization"]
+    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"], ["다국어처리"], ["생체인증", "패턴"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -152,6 +152,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             vc = ShareViewController()
         case 10:
             vc = LocalizationViewController()
+        case 11:
+            vc = BiometricsViewController()
         default:
             print("empty section")
         }
