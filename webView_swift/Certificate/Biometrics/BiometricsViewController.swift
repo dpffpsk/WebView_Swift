@@ -11,16 +11,26 @@ import LocalAuthentication
 class BiometricsViewController: BaseViewController {
 
     let biometricsView = BiometricsView()
-    let authContext = LAContext()
     
+    enum AuthenticationState {
+        case login, logout
+    }
+    
+    // 현재 로그인 상태에 따른 UI 변화
+    var state = AuthenticationState.logout {
+        didSet {
+            if state == .login {
+                biometricsView.loginStateButton.setTitle("LOGOUT", for: .normal)
+            } else {
+                biometricsView.loginStateButton.setTitle("LOGIN", for: .normal)
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("authContext : \(authContext.biometryType.rawValue)")
-        authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-        authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "인증하기") { success, error in
-            print("결과", success, error)
-        }
+        buttonAction()
     }
  
     override func setupLayout() {
@@ -33,5 +43,32 @@ class BiometricsViewController: BaseViewController {
         biometricsView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         biometricsView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         biometricsView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+    }
+    
+    func buttonAction() {
+        self.biometricsView.loginStateButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+    }
+    
+    @objc func loginTapped() {
+        if state == .login {
+            state = .logout
+        } else {
+            let authContext = LAContext()
+            print("authContext : \(authContext.biometryType.rawValue)")
+            
+            if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) {
+                authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: "인증하기") { success, error in
+                    
+                    if success {
+                        DispatchQueue.main.async {
+                            self.state = .login
+                        }
+                    } else {
+                        
+                    }
+                    print("결과", success, error)
+                }
+            }
+        }
     }
 }
