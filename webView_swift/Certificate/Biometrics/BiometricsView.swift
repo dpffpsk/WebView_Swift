@@ -39,6 +39,7 @@ class BiometricsView: BaseView {
         biometricsImageView.topAnchor.constraint(equalTo: self.loginStateButton.bottomAnchor, constant: 30).isActive = true
         biometricsImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100).isActive = true
         biometricsImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100).isActive = true
-        biometricsImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -400).isActive = true
+        biometricsImageView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+
     }
 }

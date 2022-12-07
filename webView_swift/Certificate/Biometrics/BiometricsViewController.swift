@@ -31,7 +31,6 @@ class BiometricsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        buttonAction()
         setup()
     }
  
@@ -46,22 +45,12 @@ class BiometricsViewController: BaseViewController {
         biometricsView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         biometricsView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-    
-    func buttonAction() {
-        self.biometricsView.loginStateButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
-    }
-    
-    func setup() {
+
+    private func setup() {
         self.biometricsView.loginStateButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         
         let authContext = LAContext()
-
-        // 지원 가능한 디바이스 구분
-        guard authContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) else {
-            Alert().show(message: "Error : \(error?.localizedDescription ?? "Failed to authenticate")")
-            return
-        }
-        
+        canEvaluatePolicy(authContext: authContext)
         print("BiometryType : \(authContext.biometryType)")
         
         var imageName = ""
@@ -83,17 +72,39 @@ class BiometricsViewController: BaseViewController {
             state = .logout
         } else { // state logout -> login 변경(logout 상태)
             let authContext = LAContext()
+            canEvaluatePolicy(authContext: authContext)
             
-            // 지원 가능한 디바이스 구분
-            if authContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-                authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "인증하기") { success, error in
-                    if success {
-                        DispatchQueue.main.async {
-                            self.state = .login
-                        }
-                    } else {
-                        Alert().show(message: "Error : \(error?.localizedDescription ?? "Failed to authenticate")")
-                    }
+            let domainState = authContext.evaluatedPolicyDomainState
+
+            if UserDefaults.standard.data(forKey: "domainState") != nil && domainState != UserDefaults.standard.data(forKey: "domainState") {
+                print("domainState : \(domainState)")
+                
+                Alert().show(message: "생체인증정보가 변경되어 재등록을 진행합니다.") {
+                    self.evaluatePolicy(authContext: authContext, domainState: domainState)
+                    return
+                }
+            } else {
+                evaluatePolicy(authContext: authContext, domainState: domainState)
+            }
+        }
+    }
+    
+    private func canEvaluatePolicy(authContext: LAContext = .init()) {
+        guard authContext.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) else {
+            Alert().show(message: "Error : \(error?.localizedDescription ?? "Failed to authenticate")")
+            return
+        }
+    }
+    
+    private func evaluatePolicy(authContext: LAContext = .init(), domainState: Data?) {
+        if let domainState = domainState {
+            UserDefaults.standard.set(domainState, forKey: "domainState")
+        }
+        
+        authContext.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "생체인증") { success, error in
+            if success {
+                DispatchQueue.main.async {
+                    self.state = .login
                 }
             } else {
                 Alert().show(message: "Error : \(error?.localizedDescription ?? "Failed to authenticate")")

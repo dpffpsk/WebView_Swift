@@ -73,7 +73,6 @@ class Camera: NSObject, UIImagePickerControllerDelegate, UINavigationControllerD
         // 카메라 종료
         // picker.dismiss(animated: true, completion: nil)
         
-        print("=========")
         if let image = info[.originalImage] as? UIImage {
             UIImageWriteToSavedPhotosAlbum(image, self, #selector(savedImage), nil)
         }
