@@ -1,0 +1,16 @@
+PODS:
+  - CCGestureLock (0.1.4)
+
+DEPENDENCIES:
+  - CCGestureLock
+
+SPEC REPOS:
+  trunk:
+    - CCGestureLock
+
+SPEC CHECKSUMS:
+  CCGestureLock: 9cd4ef1bc410b1457c1b131de87c438b2dcd29f5
+
+PODFILE CHECKSUM: f7fc12b6ecfd8ca5495f96e729de2a8ac50e92c5
+
+COCOAPODS: 1.11.3

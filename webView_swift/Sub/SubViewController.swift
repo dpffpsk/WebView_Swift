@@ -26,6 +26,12 @@ class SubViewController: UIViewController {
         setupLayout()
         setupConstraints()
         setIntro()
+        
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
     }
 
     func setupLayout() {
@@ -153,7 +159,14 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
         case 10:
             vc = LocalizationViewController()
         case 11:
-            vc = BiometricsViewController()
+            switch indexPath.row {
+            case 0:
+                vc = BiometricsViewController()
+            case 1:
+                vc = PatternLockViewController()
+            default:
+                print("empty vc")
+            }
         default:
             print("empty section")
         }
