@@ -40,7 +40,7 @@ class PatternLockViewController: BaseViewController {
         gestureLock.backgroundColor = .white
     }
     
-    
+    // TODO: 최소 점의 개수 조건 추가
     @objc func gestureComplete(gestureLock: CCGestureLock) {
         let lockSequence = gestureLock.lockSequence
         
