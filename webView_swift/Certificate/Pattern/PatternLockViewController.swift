@@ -29,7 +29,7 @@ class PatternLockViewController: BaseViewController {
         patternLockView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
         patternLockView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 30).isActive = true
         patternLockView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
-        patternLockView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        patternLockView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         
         gestureLock.translatesAutoresizingMaskIntoConstraints = false
         gestureLock.topAnchor.constraint(equalTo: patternLockView.bottomAnchor, constant: 10).isActive = true
@@ -40,7 +40,6 @@ class PatternLockViewController: BaseViewController {
         gestureLock.backgroundColor = .white
     }
     
-    // TODO: 최소 점의 개수 조건 추가
     @objc func gestureComplete(gestureLock: CCGestureLock) {
         let lockSequence = gestureLock.lockSequence
         
@@ -53,14 +52,22 @@ class PatternLockViewController: BaseViewController {
         if dataString == "03678" {
             // 패턴 일치
             gestureLock.gestureLockState = .normal
+            patternLockView.warningLabel.textColor = .green
+            patternLockView.warningLabel.text = "성공~"
             
-            Alert().show(message: "SUCCESS")
         } else {
             // 패턴 불일치
             gestureLock.gestureLockState = .error
+            patternLockView.warningLabel.textColor = .systemRed
+            
+            if dataString.count < 4 {
+                patternLockView.warningLabel.text = "4개 이상의 점을 연결해주세요"
+            } else {
+                patternLockView.warningLabel.text = "패턴이 일치하지 않습니다. 다시 그려주세요."
+            }
+            
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(0.5 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: {
                 gestureLock.gestureLockState = .normal
-                Alert().show(message: "Fail")
             })
         }
     }

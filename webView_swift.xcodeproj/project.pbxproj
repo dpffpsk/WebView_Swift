@@ -31,6 +31,8 @@
 		B3580E482902653A00D3491E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E472902653A00D3491E /* BaseViewController.swift */; };
 		B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E49290282AA00D3491E /* CustomTableViewController.swift */; };
 		B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E4C290282D200D3491E /* CustomTableView.swift */; };
+		B36163FC2946FC97002A8026 /* PDFView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36163FB2946FC97002A8026 /* PDFView.swift */; };
+		B36163FE2946FCAF002A8026 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36163FD2946FCAF002A8026 /* PDFViewController.swift */; };
 		B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */; };
 		B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */; };
 		B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BA290F5AE100B6E6F1 /* UIApplication.swift */; };
@@ -108,6 +110,8 @@
 		B3580E472902653A00D3491E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B3580E49290282AA00D3491E /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		B3580E4C290282D200D3491E /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
+		B36163FB2946FC97002A8026 /* PDFView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFView.swift; sourceTree = "<group>"; };
+		B36163FD2946FCAF002A8026 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermission.swift; sourceTree = "<group>"; };
 		B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionAlert.swift; sourceTree = "<group>"; };
 		B36959BA290F5AE100B6E6F1 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				B31E3955292F32D20039417A /* Share */,
 				B31E396B29309F100039417A /* Localization */,
 				B382D60F29344E370074B15E /* Certificate */,
+				B36163FA2946FAF8002A8026 /* PDFViewer */,
 				B36D586B2943259F0093CDD3 /* Sheet */,
 				B346B69E28F9459D009F5533 /* Assets.xcassets */,
 				B346B6A028F9459D009F5533 /* LaunchScreen.storyboard */,
@@ -301,6 +306,15 @@
 				B389161B29079FA8003AE1AC /* ExpandableViewController.swift */,
 			);
 			path = Expandable;
+			sourceTree = "<group>";
+		};
+		B36163FA2946FAF8002A8026 /* PDFViewer */ = {
+			isa = PBXGroup;
+			children = (
+				B36163FB2946FC97002A8026 /* PDFView.swift */,
+				B36163FD2946FCAF002A8026 /* PDFViewController.swift */,
+			);
+			path = PDFViewer;
 			sourceTree = "<group>";
 		};
 		B36D586B2943259F0093CDD3 /* Sheet */ = {
@@ -650,6 +664,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B36163FE2946FCAF002A8026 /* PDFViewController.swift in Sources */,
 				B36D5855293F0DE30093CDD3 /* PatternLockViewController.swift in Sources */,
 				B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */,
 				B31E394A292C8E840039417A /* EncryptionViewController.swift in Sources */,
@@ -675,6 +690,7 @@
 				B3B9BC5F28FFB1F7001254FC /* WebView.swift in Sources */,
 				B3A352582924736300CF726B /* DataBaseView.swift in Sources */,
 				B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */,
+				B36163FC2946FC97002A8026 /* PDFView.swift in Sources */,
 				B31E39712930B3A20039417A /* QRCodeView.swift in Sources */,
 				B3B9BC5C28FF80BC001254FC /* MainView.swift in Sources */,
 				B36D5857293F0DF60093CDD3 /* PatternLockView.swift in Sources */,

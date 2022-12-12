@@ -12,8 +12,8 @@ class SubViewController: UIViewController {
     let introView = IntroView()
     let subView: SubView = SubView()
     
-    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share", "Localization", "Authorization"]
-    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"], ["다국어처리"], ["생체인증", "패턴"]]
+    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share", "Localization", "Authorization", "PDF"]
+    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"], ["다국어처리"], ["생체인증", "패턴"], ["PDF"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,6 +167,8 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
+        case 12:
+            vc = PDFViewController()
         default:
             print("empty section")
         }

@@ -17,16 +17,33 @@ class PatternLockView: BaseView {
         label.textAlignment = .center
         return label
     }()
+    
+    lazy var warningLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = .systemRed
+        label.textAlignment = .center
+        return label
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.distribution = .fillProportionally
+        return stack
+    }()
 
     override func setupLayout() {
-        self.addSubview(titleLabel)
+        addSubview(stackView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(warningLabel)
     }
     
     override func setupConstraints() {
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        titleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        titleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        titleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 }
