@@ -10,25 +10,34 @@ import PDFKit
 
 class PDFViewController: BaseViewController {
 
+    let pdfView = PDFView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        pdfView.autoScales = true
+        pdfView.displayMode = .singlePageContinuous
+        pdfView.displayDirection = .vertical
+    
+        // main bundle : project 디렉토리 안에 있는 파일
+        // guard let fileURL = Bundle.main.url(forResource: "파일명", withExtension: "pdf") else { return }
+        guard let url = URL(string: "https://www.africau.edu/images/default/sample.pdf") else { return }
+        
+        guard let document = PDFDocument(url: url) else { return }
+        pdfView.document = document
+        
+        // create document
+        // var newDocument = PDFDocument()
+        // guard let page = PDFPage(image: UIImage(systemName: "")!) else { return }
+        // newDocument.insert(page, at: 1)
+        // pdfView.document = newDocument
+    }
+    
+    override func setupLayout() {
+        view.addSubview(pdfView)
     }
     
     override func setupConstraints() {
-        let pdfView = PDFView(frame: self.view.bounds)
-        
-        view.addSubview(pdfView)
-        
-//        pdfView.autoScales = true
-        pdfView.displayMode = .singlePageContinuous
-        pdfView.displayDirection = .vertical
-        
-//        let fileURL = Bundle.main.url(forResource: "파일명", withExtension: "pdf")
-        let urlString = "https://www.africau.edu/images/default/sample.pdf"
-        
-        if let url = URL(string: urlString) {
-            pdfView.document = PDFDocument(url: url)
-        }
+        pdfView.frame = view.bounds
     }
 }

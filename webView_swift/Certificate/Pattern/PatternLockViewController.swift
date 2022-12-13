@@ -80,8 +80,7 @@ class PatternLockViewController: BaseViewController {
         // 가장자리 간격 (숫자 늘리면 원들이 더 모여짐)
         // Sensor grid customisations
         gestureLock.edgeInsets = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
-        
-        
+         
         // 선택 안되어 있을 때 기본 안쪽 작은 원 색깔
         // Sensor point customisation (normal)
         gestureLock.setSensorAppearance(
@@ -136,7 +135,6 @@ class PatternLockViewController: BaseViewController {
             color: .red,
             forState: .error
         )
-        
         
         // 이어지는 선 색깔
         // Line connecting sensor points (normal/selected)
