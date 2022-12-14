@@ -12,8 +12,23 @@ class SubViewController: UIViewController {
     let introView = IntroView()
     let subView: SubView = SubView()
     
-    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner", "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share", "Localization", "Authorization", "PDF"]
-    let data = [["WKWebView"], ["Basic", "Custom", "Expand"], ["권한 설정"], ["Camera", "Gallery"], ["QR&Barcode Scanner", "QRcode"], ["CoreData", "DataBase(SQLite)"], ["PageView"], ["암,복호화"], ["화면 전환 애니메이션"], ["공유하기"], ["다국어처리"], ["생체인증", "패턴"], ["PDF"]]
+    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner",
+                  "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share",
+                  "Localization", "Authorization", "PDF", "Sheet"]
+    let data = [["WKWebView"],
+                ["Basic", "Custom", "Expand"],
+                ["권한 설정"],
+                ["Camera", "Gallery"],
+                ["QR&Barcode Scanner", "QRcode"],
+                ["CoreData", "DataBase(SQLite)"],
+                ["PageView"],
+                ["암,복호화"],
+                ["화면 전환 애니메이션"],
+                ["공유하기"],
+                ["다국어처리"],
+                ["생체인증", "패턴", "example"],
+                ["PDF"],
+                ["SheetView"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,11 +179,15 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
                 vc = BiometricsViewController()
             case 1:
                 vc = PatternLockViewController()
+            case 2:
+                vc = DragOnLineViewController()
             default:
                 print("empty vc")
             }
         case 12:
             vc = PDFViewController()
+        case 13:
+            vc = SheetViewController()
         default:
             print("empty section")
         }

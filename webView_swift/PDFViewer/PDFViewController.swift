@@ -19,7 +19,7 @@ class PDFViewController: BaseViewController {
         pdfView.displayMode = .singlePageContinuous
         pdfView.displayDirection = .vertical
     
-        // main bundle : project 디렉토리 안에 있는 파일
+        // main bundle : project 내 디렉토리에 있는 파일
         // guard let fileURL = Bundle.main.url(forResource: "파일명", withExtension: "pdf") else { return }
         guard let url = URL(string: "https://www.africau.edu/images/default/sample.pdf") else { return }
         

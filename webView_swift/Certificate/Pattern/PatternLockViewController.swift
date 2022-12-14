@@ -37,7 +37,7 @@ class PatternLockViewController: BaseViewController {
         gestureLock.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         gestureLock.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        gestureLock.backgroundColor = .white
+//        gestureLock.backgroundColor = .white
     }
     
     @objc func gestureComplete(gestureLock: CCGestureLock) {

@@ -32,6 +32,11 @@
 		B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E49290282AA00D3491E /* CustomTableViewController.swift */; };
 		B3580E4D290282D200D3491E /* CustomTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3580E4C290282D200D3491E /* CustomTableView.swift */; };
 		B36163FE2946FCAF002A8026 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36163FD2946FCAF002A8026 /* PDFViewController.swift */; };
+		B361640329481623002A8026 /* ExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B361640229481623002A8026 /* ExampleViewController.swift */; };
+		B3616405294817AE002A8026 /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3616404294817AE002A8026 /* ExampleView.swift */; };
+		B361640729484C2D002A8026 /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B361640629484C2D002A8026 /* Draw.swift */; };
+		B36164092949910D002A8026 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36164082949910D002A8026 /* SheetViewController.swift */; };
+		B361640B29499122002A8026 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B361640A29499122002A8026 /* SheetView.swift */; };
 		B36959B7290F546E00B6E6F1 /* GalleryPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */; };
 		B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */; };
 		B36959BB290F5AE100B6E6F1 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959BA290F5AE100B6E6F1 /* UIApplication.swift */; };
@@ -110,6 +115,11 @@
 		B3580E49290282AA00D3491E /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		B3580E4C290282D200D3491E /* CustomTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableView.swift; sourceTree = "<group>"; };
 		B36163FD2946FCAF002A8026 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		B361640229481623002A8026 /* ExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewController.swift; sourceTree = "<group>"; };
+		B3616404294817AE002A8026 /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		B361640629484C2D002A8026 /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		B36164082949910D002A8026 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		B361640A29499122002A8026 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		B36959B6290F546E00B6E6F1 /* GalleryPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryPermission.swift; sourceTree = "<group>"; };
 		B36959B8290F581C00B6E6F1 /* PermissionAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionAlert.swift; sourceTree = "<group>"; };
 		B36959BA290F5AE100B6E6F1 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
@@ -314,9 +324,21 @@
 			path = PDFViewer;
 			sourceTree = "<group>";
 		};
+		B3616401294815F2002A8026 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				B3616404294817AE002A8026 /* ExampleView.swift */,
+				B361640229481623002A8026 /* ExampleViewController.swift */,
+				B361640629484C2D002A8026 /* Draw.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		B36D586B2943259F0093CDD3 /* Sheet */ = {
 			isa = PBXGroup;
 			children = (
+				B36164082949910D002A8026 /* SheetViewController.swift */,
+				B361640A29499122002A8026 /* SheetView.swift */,
 			);
 			path = Sheet;
 			sourceTree = "<group>";
@@ -326,6 +348,7 @@
 			children = (
 				B382D61029344E4C0074B15E /* Biometrics */,
 				B382D61129344E510074B15E /* Pattern */,
+				B3616401294815F2002A8026 /* Example */,
 			);
 			path = Certificate;
 			sourceTree = "<group>";
@@ -663,7 +686,9 @@
 			files = (
 				B36163FE2946FCAF002A8026 /* PDFViewController.swift in Sources */,
 				B36D5855293F0DE30093CDD3 /* PatternLockViewController.swift in Sources */,
+				B36164092949910D002A8026 /* SheetViewController.swift in Sources */,
 				B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */,
+				B361640B29499122002A8026 /* SheetView.swift in Sources */,
 				B31E394A292C8E840039417A /* EncryptionViewController.swift in Sources */,
 				B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */,
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
@@ -680,6 +705,7 @@
 				B3DDEF9D292C5CCA00D406A4 /* Alert.swift in Sources */,
 				B38916282908C755003AE1AC /* PermissionView.swift in Sources */,
 				B38916262908C746003AE1AC /* PermissionViewController.swift in Sources */,
+				B3616405294817AE002A8026 /* ExampleView.swift in Sources */,
 				B389161E29079FF0003AE1AC /* ExpandableTableView.swift in Sources */,
 				B31E3954292E08F50039417A /* NextViewController.swift in Sources */,
 				B3E893BC291CBFF8002F6AE2 /* ImageTable+CoreDataProperties.swift in Sources */,
@@ -717,12 +743,14 @@
 				B3E893A1291B9D59002F6AE2 /* CoreDataViewController.swift in Sources */,
 				B31E3957292F32EA0039417A /* ShareViewController.swift in Sources */,
 				B36959C32910FC7500B6E6F1 /* Camera.swift in Sources */,
+				B361640729484C2D002A8026 /* Draw.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,
 				B3580E462902652800D3491E /* BaseView.swift in Sources */,
 				B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */,
 				B31E396D29309F4A0039417A /* LocalizationViewController.swift in Sources */,
+				B361640329481623002A8026 /* ExampleViewController.swift in Sources */,
 				B3E893BB291CBFF8002F6AE2 /* ImageTable+CoreDataClass.swift in Sources */,
 				B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */,
 				B3A3525C29247C1A00CF726B /* DBHelper.swift in Sources */,
