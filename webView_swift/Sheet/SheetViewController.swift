@@ -27,6 +27,7 @@ class SheetViewController: BaseViewController {
         sheetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         sheetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         sheetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        self.view.layoutIfNeeded()
     }
   
     func buttonAction() {
@@ -37,8 +38,8 @@ class SheetViewController: BaseViewController {
         print("dsfsdf")
         
         self.navigationController?.navigationBar.isHidden = true
-        self.view.layoutIfNeeded()
         sheetView.show()
+        self.sheetView.showTopSheetButton.isEnabled = false
     }
     
 }
