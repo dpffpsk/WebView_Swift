@@ -337,8 +337,8 @@
 		B36D586B2943259F0093CDD3 /* Sheet */ = {
 			isa = PBXGroup;
 			children = (
-				B36164082949910D002A8026 /* SheetViewController.swift */,
 				B361640A29499122002A8026 /* SheetView.swift */,
+				B36164082949910D002A8026 /* SheetViewController.swift */,
 			);
 			path = Sheet;
 			sourceTree = "<group>";

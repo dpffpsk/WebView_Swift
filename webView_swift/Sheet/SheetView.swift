@@ -8,13 +8,12 @@
 import UIKit
 
 class SheetView: BaseView {
-    var constraint1: NSLayoutConstraint?
-    var constraint2: NSLayoutConstraint?
-    var constraint3: NSLayoutConstraint?
-    var constraint4: NSLayoutConstraint?
+    private var topConstraint: NSLayoutConstraint?
+    private var bottomConstraint: NSLayoutConstraint?
+    private var leadingConstraint: NSLayoutConstraint?
+    private var trailingConstraint: NSLayoutConstraint?
     
-
-    lazy var backgroundView: UIView = {
+    private lazy var backgroundView: UIView = {
         let view = UIView()
         return view
     }()
@@ -35,26 +34,29 @@ class SheetView: BaseView {
     
     private lazy var topLabel: UILabel = {
         let label = UILabel()
-        label.text = "★Top Sheet★"
-        label.textColor = .systemBlue
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.text = "★Ta-Da!★"
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textAlignment = .center
         return label
     }()
+
+    override init() {
+        super.init()
+        
+        self.backgroundColor = .clear
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
+        self.addGestureRecognizer(tapGestureRecognizer)
+    }
     
-    lazy var showTopSheetButton: UIButton = {
-        let btn = UIButton()
-        btn.setTitle("Top Sheet", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
-        btn.backgroundColor = .systemBlue
-        return btn
-    }()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func setupLayout() {
         addSubview(backgroundView)
-        backgroundView.addSubview(showTopSheetButton)
         addSubview(contentView)
+        contentView.addSubview(topLabel)
     }
     
     override func setupConstraints() {
@@ -64,37 +66,55 @@ class SheetView: BaseView {
         backgroundView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
-        showTopSheetButton.translatesAutoresizingMaskIntoConstraints = false
-        showTopSheetButton.centerXAnchor.constraint(equalTo: self.backgroundView.centerXAnchor).isActive = true
-        showTopSheetButton.centerYAnchor.constraint(equalTo: self.backgroundView.centerYAnchor).isActive = true
-        showTopSheetButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        showTopSheetButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        constraint1 = contentView.topAnchor.constraint(equalTo: self.topAnchor)
-        constraint1?.isActive = true
-        constraint2 = contentView.bottomAnchor.constraint(equalTo: self.topAnchor)
-        constraint2?.isActive = true
-        constraint3 = contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
-        constraint3?.isActive = true
-        constraint4 = contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
-        constraint4?.isActive = true
+        topConstraint = contentView.topAnchor.constraint(equalTo: self.topAnchor)
+        topConstraint?.isActive = true
+        bottomConstraint = contentView.bottomAnchor.constraint(equalTo: self.topAnchor)
+        bottomConstraint?.isActive = true
+        leadingConstraint = contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
+        leadingConstraint?.isActive = true
+        trailingConstraint = contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        trailingConstraint?.isActive = true
+        
+        topLabel.translatesAutoresizingMaskIntoConstraints = false
+        topLabel.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
+        topLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
     }
     
     func show() {
-        constraint1?.isActive = false
-        constraint2?.isActive = false
+        topConstraint?.isActive = false
+        bottomConstraint?.isActive = false
         
         contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
-        contentView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        UIView.animate(withDuration: 0.3, delay: 0, options: .transitionCrossDissolve) {
-            self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+            self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
             self.layoutIfNeeded()
         }
     }
     
     func hide() {
+        topConstraint?.isActive = false
+        bottomConstraint?.isActive = false
         
+        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                            self.backgroundView.backgroundColor = .clear
+                            self.layoutIfNeeded()
+                       },
+                       completion: { _ in
+                            self.removeFromSuperview()
+            }
+        )
+    }
+    
+    @objc func didTapView(_: UITapGestureRecognizer) {
+        hide()
     }
 }
