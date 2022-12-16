@@ -7,18 +7,24 @@
 
 import UIKit
 
-class SheetView: BaseView {
-    private var topConstraint: NSLayoutConstraint?
-    private var bottomConstraint: NSLayoutConstraint?
+enum Gubun{
+    case top
+    case bottom
+}
+
+class SheetView: UIView {
+    var topConstraint: NSLayoutConstraint?
+    var bottomConstraint: NSLayoutConstraint?
     private var leadingConstraint: NSLayoutConstraint?
     private var trailingConstraint: NSLayoutConstraint?
+    private var gubun: Gubun!
     
     private lazy var backgroundView: UIView = {
         let view = UIView()
         return view
     }()
     
-    private lazy var contentView: UIView = {
+    lazy var contentView: UIView = {
         let view = UIView()
         view.backgroundColor = .orange
         view.clipsToBounds = true
@@ -41,25 +47,28 @@ class SheetView: BaseView {
         return label
     }()
 
-    override init() {
-        super.init()
+    init(gubun: Gubun? = .top) {
+        super.init(frame: .zero)
         
+        self.gubun = gubun
         self.backgroundColor = .clear
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapView))
         self.addGestureRecognizer(tapGestureRecognizer)
+        setupLayout()
+        setupConstraints()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func setupLayout() {
+    private func setupLayout() {
         addSubview(backgroundView)
         addSubview(contentView)
         contentView.addSubview(topLabel)
     }
     
-    override func setupConstraints() {
+    private func setupConstraints() {
         backgroundView.translatesAutoresizingMaskIntoConstraints = false
         backgroundView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         backgroundView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
@@ -67,13 +76,20 @@ class SheetView: BaseView {
         backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        topConstraint = contentView.topAnchor.constraint(equalTo: self.topAnchor)
-        topConstraint?.isActive = true
-        bottomConstraint = contentView.bottomAnchor.constraint(equalTo: self.topAnchor)
-        bottomConstraint?.isActive = true
+        
+        if gubun == .top {
+            topConstraint = contentView.topAnchor.constraint(equalTo: self.topAnchor)
+            bottomConstraint = contentView.bottomAnchor.constraint(equalTo: self.topAnchor)
+        } else {
+            topConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor)
+            bottomConstraint = contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        }
         leadingConstraint = contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
-        leadingConstraint?.isActive = true
         trailingConstraint = contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+        
+        topConstraint?.isActive = true
+        bottomConstraint?.isActive = true
+        leadingConstraint?.isActive = true
         trailingConstraint?.isActive = true
         
         topLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +97,7 @@ class SheetView: BaseView {
         topLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
     }
     
-    func show() {
+    func showTopSheet() {
         topConstraint?.isActive = false
         bottomConstraint?.isActive = false
         
@@ -89,17 +105,12 @@ class SheetView: BaseView {
         contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
-            self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+            self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
             self.layoutIfNeeded()
         }
     }
-    
-    func hide() {
-        topConstraint?.isActive = false
-        bottomConstraint?.isActive = false
-        
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.topAnchor).isActive = true
+
+    private func hideSheet() {
         
         UIView.animate(withDuration: 0.3,
                        delay: 0,
@@ -114,7 +125,31 @@ class SheetView: BaseView {
         )
     }
     
-    @objc func didTapView(_: UITapGestureRecognizer) {
-        hide()
+    @objc private func didTapView(_: UITapGestureRecognizer) {
+        topConstraint?.isActive = false
+        bottomConstraint?.isActive = false
+        
+        if gubun == .top {
+            contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+            contentView.bottomAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        } else {
+            contentView.topAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+            contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        }
+        
+        hideSheet()
+    }
+    
+    func showBottomSheet() {
+        topConstraint?.isActive = false
+        bottomConstraint?.isActive = false
+        
+        contentView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+            self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+            self.layoutIfNeeded()
+        }
     }
 }
