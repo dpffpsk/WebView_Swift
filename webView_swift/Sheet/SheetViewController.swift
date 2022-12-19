@@ -65,38 +65,28 @@ class SheetViewController: BaseViewController {
     @objc func didTapTopSheetButton(_: UIButton) {
         let sheetView = SheetView()
         
-//        view.addSubview(sheetView)
-        self.navigationController?.view.addSubview(sheetView)
+        UIApplication.topViewController()?.view.addSubview(sheetView)
         sheetView.translatesAutoresizingMaskIntoConstraints = false
         sheetView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         sheetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         sheetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         sheetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        self.view.layoutIfNeeded()
+        UIApplication.topViewController()?.view.layoutIfNeeded()
         
-//        self.navigationController?.navigationBar.isHidden = true
         sheetView.showTopSheet()
     }
     
     @objc func didTapBottomSheetButton(_: UIButton) {
         let sheetView = SheetView(gubun: .bottom)
         
-        view.addSubview(sheetView)
+        UIApplication.topViewController()?.view.addSubview(sheetView)
         sheetView.translatesAutoresizingMaskIntoConstraints = false
         sheetView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         sheetView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         sheetView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         sheetView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        self.view.layoutIfNeeded()
+        UIApplication.topViewController()?.view.layoutIfNeeded()
         
         sheetView.showBottomSheet()
-    }
-
-    override func viewDidLayoutSubviews() {
-        if let lastView = self.view.subviews.last {
-            if lastView == buttonStackView {
-                self.navigationController?.navigationBar.isHidden = false
-            }
-        }
     }
 }

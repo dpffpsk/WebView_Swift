@@ -76,7 +76,6 @@ class SheetView: UIView {
         backgroundView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        
         if gubun == .top {
             topConstraint = contentView.topAnchor.constraint(equalTo: self.topAnchor)
             bottomConstraint = contentView.bottomAnchor.constraint(equalTo: self.topAnchor)
@@ -84,6 +83,7 @@ class SheetView: UIView {
             topConstraint = contentView.topAnchor.constraint(equalTo: self.bottomAnchor)
             bottomConstraint = contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         }
+        
         leadingConstraint = contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10)
         trailingConstraint = contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
         
@@ -101,17 +101,16 @@ class SheetView: UIView {
         topConstraint?.isActive = false
         bottomConstraint?.isActive = false
         
-        contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
-        contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        self.contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive = true
+        self.contentView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .transitionCrossDissolve) {
             self.backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
             self.layoutIfNeeded()
         }
     }
-
+    
     private func hideSheet() {
-        
         UIView.animate(withDuration: 0.3,
                        delay: 0,
                        options: .curveEaseOut,
