@@ -12,9 +12,21 @@ class SubViewController: UIViewController {
     let introView = IntroView()
     let subView: SubView = SubView()
     
-    let header = ["WebView", "TableView", "Permission", "Photo", "Scanner",
-                  "File", "PageView", "Encrypt&Decrypt", "Presentation", "Share",
-                  "Localization", "Authorization", "PDF", "Sheet"]
+    let header = ["WebView",
+                  "TableView",
+                  "Permission",
+                  "Photo",
+                  "Scanner",
+                  "File",
+                  "PageView",
+                  "Encrypt&Decrypt",
+                  "Presentation",
+                  "Share",
+                  "Localization",
+                  "Authorization",
+                  "PDF",
+                  "Sheet"]
+    
     let data = [["WKWebView"],
                 ["Basic", "Custom", "Expand"],
                 ["권한 설정"],
