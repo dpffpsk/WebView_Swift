@@ -118,9 +118,9 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
         var vc = UIViewController()
 
         switch indexPath.section {
-        case 0:
+        case 0: // WebView
             vc = MainViewController()
-        case 1:
+        case 1: // TableView
             switch indexPath.row {
             case 0:
                 vc = BasicTableViewController()
@@ -131,9 +131,9 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-        case 2:
+        case 2: // Permission
             vc = PermissionViewController()
-        case 3:
+        case 3: // Photo
             switch indexPath.row {
             case 0:
                 vc = CameraViewController()
@@ -142,7 +142,7 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-        case 4:
+        case 4: // Scanner
             switch indexPath.row {
             case 0:
                 vc = ScannerViewController()
@@ -154,7 +154,7 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             
             self.present(vc, animated: true)
             return
-        case 5:
+        case 5: // File
             switch indexPath.row {
             case 0:
                 vc = CoreDataViewController()
@@ -163,17 +163,17 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-        case 6:
+        case 6: // PageView
             vc = PageViewController()
-        case 7:
+        case 7: // Ecrypt&Decrypt
             vc = EncryptionViewController()
-        case 8:
+        case 8: // Presentation
             vc = PresentationViewController()
-        case 9:
+        case 9: // Share
             vc = ShareViewController()
-        case 10:
+        case 10: // Localization
             vc = LocalizationViewController()
-        case 11:
+        case 11: // Authorization
             switch indexPath.row {
             case 0:
                 vc = BiometricsViewController()
@@ -184,9 +184,9 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             default:
                 print("empty vc")
             }
-        case 12:
+        case 12: // PDF
             vc = PDFViewController()
-        case 13:
+        case 13: // Sheet
             vc = SheetViewController()
         default:
             print("empty section")
