@@ -6,6 +6,7 @@ target 'webView_swift' do
   use_frameworks!
 
   pod "CCGestureLock"
+  pod 'PanModal'
 
   # Pods for webView_swift
 

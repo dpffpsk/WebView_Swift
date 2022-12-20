@@ -20,6 +20,7 @@
 		B31E396F2930A0280039417A /* LocalizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E396E2930A0280039417A /* LocalizationView.swift */; };
 		B31E39712930B3A20039417A /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E39702930B3A20039417A /* QRCodeView.swift */; };
 		B31E39732930B3AC0039417A /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31E39722930B3AC0039417A /* QRCodeViewController.swift */; };
+		B333D22A29518C760043B2D8 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B333D22929518C760043B2D8 /* ModalViewController.swift */; };
 		B346B69628F9459B009F5533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69528F9459B009F5533 /* AppDelegate.swift */; };
 		B346B69828F9459B009F5533 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69728F9459B009F5533 /* SceneDelegate.swift */; };
 		B346B69A28F9459B009F5533 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346B69928F9459B009F5533 /* MainViewController.swift */; };
@@ -62,6 +63,8 @@
 		B389162F290A66C5003AE1AC /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389162E290A66C5003AE1AC /* CameraView.swift */; };
 		B3891631290BBEB9003AE1AC /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891630290BBEB9003AE1AC /* GalleryView.swift */; };
 		B3891633290BBECB003AE1AC /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3891632290BBECB003AE1AC /* GalleryViewController.swift */; };
+		B39538AA2951545E005EAAA2 /* PanModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39538A92951545E005EAAA2 /* PanModalViewController.swift */; };
+		B39538AC29515475005EAAA2 /* PanModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39538AB29515475005EAAA2 /* PanModalView.swift */; };
 		B3A3524E29232BF100CF726B /* PageWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A3524D29232BF100CF726B /* PageWebViewController.swift */; };
 		B3A352562924735300CF726B /* DataBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A352552924735300CF726B /* DataBaseViewController.swift */; };
 		B3A352582924736300CF726B /* DataBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A352572924736300CF726B /* DataBaseView.swift */; };
@@ -101,6 +104,7 @@
 		B31E396E2930A0280039417A /* LocalizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationView.swift; sourceTree = "<group>"; };
 		B31E39702930B3A20039417A /* QRCodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		B31E39722930B3AC0039417A /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		B333D22929518C760043B2D8 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		B346B69228F9459B009F5533 /* webView_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = webView_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B346B69528F9459B009F5533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B346B69728F9459B009F5533 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 		B389162E290A66C5003AE1AC /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		B3891630290BBEB9003AE1AC /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		B3891632290BBECB003AE1AC /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		B39538A92951545E005EAAA2 /* PanModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalViewController.swift; sourceTree = "<group>"; };
+		B39538AB29515475005EAAA2 /* PanModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanModalView.swift; sourceTree = "<group>"; };
 		B3A3524D29232BF100CF726B /* PageWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageWebViewController.swift; sourceTree = "<group>"; };
 		B3A352552924735300CF726B /* DataBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseViewController.swift; sourceTree = "<group>"; };
 		B3A352572924736300CF726B /* DataBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseView.swift; sourceTree = "<group>"; };
@@ -339,6 +345,9 @@
 			children = (
 				B361640A29499122002A8026 /* SheetView.swift */,
 				B36164082949910D002A8026 /* SheetViewController.swift */,
+				B333D22929518C760043B2D8 /* ModalViewController.swift */,
+				B39538AB29515475005EAAA2 /* PanModalView.swift */,
+				B39538A92951545E005EAAA2 /* PanModalViewController.swift */,
 			);
 			path = Sheet;
 			sourceTree = "<group>";
@@ -689,6 +698,7 @@
 				B36164092949910D002A8026 /* SheetViewController.swift in Sources */,
 				B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */,
 				B361640B29499122002A8026 /* SheetView.swift in Sources */,
+				B39538AC29515475005EAAA2 /* PanModalView.swift in Sources */,
 				B31E394A292C8E840039417A /* EncryptionViewController.swift in Sources */,
 				B36959C12910AF1600B6E6F1 /* Gallery.swift in Sources */,
 				B389161A29076B4B003AE1AC /* CustomTableViewCell.swift in Sources */,
@@ -700,6 +710,7 @@
 				B36959C52911130000B6E6F1 /* LocationPermission.swift in Sources */,
 				B3E8939A2918F694002F6AE2 /* ScannerView.swift in Sources */,
 				B3E893982918F683002F6AE2 /* ScannerViewController.swift in Sources */,
+				B39538AA2951545E005EAAA2 /* PanModalViewController.swift in Sources */,
 				B3B9BC5A28FE83B3001254FC /* IntroView.swift in Sources */,
 				B31E396F2930A0280039417A /* LocalizationView.swift in Sources */,
 				B3DDEF9D292C5CCA00D406A4 /* Alert.swift in Sources */,
@@ -746,6 +757,7 @@
 				B361640729484C2D002A8026 /* Draw.swift in Sources */,
 				B38916202907A11B003AE1AC /* ExpandableCellData.swift in Sources */,
 				B3B9BC5428FD357B001254FC /* MainViewController+WKNavigationDelegate.swift in Sources */,
+				B333D22A29518C760043B2D8 /* ModalViewController.swift in Sources */,
 				B3580E4A290282AA00D3491E /* CustomTableViewController.swift in Sources */,
 				B3580E462902652800D3491E /* BaseView.swift in Sources */,
 				B3B9BC6328FFCA47001254FC /* SubView.swift in Sources */,

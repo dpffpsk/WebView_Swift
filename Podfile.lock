@@ -1,16 +1,20 @@
 PODS:
   - CCGestureLock (0.1.4)
+  - PanModal (1.2.7)
 
 DEPENDENCIES:
   - CCGestureLock
+  - PanModal
 
 SPEC REPOS:
   trunk:
     - CCGestureLock
+    - PanModal
 
 SPEC CHECKSUMS:
   CCGestureLock: 9cd4ef1bc410b1457c1b131de87c438b2dcd29f5
+  PanModal: 3e16ead1a907fb06f4df3f13492fd00149fa4974
 
-PODFILE CHECKSUM: f7fc12b6ecfd8ca5495f96e729de2a8ac50e92c5
+PODFILE CHECKSUM: ebc8d4104e2162d0fb3fda960b9cb1ab18436a61
 
 COCOAPODS: 1.11.3

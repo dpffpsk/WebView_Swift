@@ -18,9 +18,21 @@ class ExpandableViewController: BaseViewController {
         expandableTableview.tableView.dataSource = self
         expandableTableview.tableView.delegate = self
         
-        expandableCellData = [ExpandableCellData(opened: false, title: "Section1", sectionData: ["    Data1-1", "    Data1-2", "    Data1-3"]),
-                              ExpandableCellData(opened: false, title: "Section2", sectionData: ["    Data2-1", "    Data2-2", "    Data2-3"]),
-                              ExpandableCellData(opened: false, title: "Section3", sectionData: ["    Data3-1", "    Data3-2", "    Data3-3"])]
+        expandableCellData = [ExpandableCellData(opened: false,
+                                                 title: "Section1",
+                                                 sectionData: ["    Data1-1",
+                                                               "    Data1-2",
+                                                               "    Data1-3"]),
+                              ExpandableCellData(opened: false,
+                                                 title: "Section2",
+                                                 sectionData: ["    Data2-1",
+                                                               "    Data2-2",
+                                                               "    Data2-3"]),
+                              ExpandableCellData(opened: false,
+                                                 title: "Section3",
+                                                 sectionData: ["    Data3-1",
+                                                               "    Data3-2",
+                                                               "    Data3-3"])]
 
     }
     

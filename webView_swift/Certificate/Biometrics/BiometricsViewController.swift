@@ -77,7 +77,7 @@ class BiometricsViewController: BaseViewController {
             let domainState = authContext.evaluatedPolicyDomainState
 
             if UserDefaults.standard.data(forKey: "domainState") != nil && domainState != UserDefaults.standard.data(forKey: "domainState") {
-                print("domainState : \(domainState)")
+                print("domainState : \(String(describing: domainState))")
                 
                 Alert().show(message: "생체인증정보가 변경되어 재등록을 진행합니다.") {
                     self.evaluatePolicy(authContext: authContext, domainState: domainState)
