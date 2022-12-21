@@ -40,7 +40,7 @@ class SubViewController: UIViewController {
                 ["다국어처리"],
                 ["생체인증", "패턴", "example"],
                 ["PDF"],
-                ["SheetView", "PanModal"]]
+                ["SheetView", "SheetPresentation"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -203,7 +203,7 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
             case 0:
                 vc = SheetViewController()
             case 1:
-                vc = ModalViewController()
+                vc = SheetPresentationViewController()
             default:
                 print("empty vc")
             }
