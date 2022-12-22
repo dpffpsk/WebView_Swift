@@ -17,18 +17,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbl-G7-LTa">
-                                <rect key="frame" x="172.66666666666666" y="410" width="44.666666666666657" height="24"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="acorn_image" translatesAutoresizingMaskIntoConstraints="NO" id="XEQ-Ij-URa">
+                                <rect key="frame" x="165" y="392" width="60" height="60"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="kSS-Em-rje"/>
+                                    <constraint firstAttribute="width" constant="60" id="n9C-eB-Tfw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
-                            <constraint firstItem="qbl-G7-LTa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4d8-1H-HkN"/>
-                            <constraint firstItem="qbl-G7-LTa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="xEP-Pu-njJ"/>
+                            <constraint firstItem="XEQ-Ij-URa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7o0-dG-Agr"/>
+                            <constraint firstItem="XEQ-Ij-URa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="keR-Gi-cn2"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +40,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="acorn_image" width="341.33334350585938" height="341.33334350585938"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
