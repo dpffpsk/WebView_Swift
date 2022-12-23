@@ -47,6 +47,7 @@
 		B36959C7291114B900B6E6F1 /* ContactPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36959C6291114B900B6E6F1 /* ContactPermission.swift */; };
 		B36D5855293F0DE30093CDD3 /* PatternLockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36D5854293F0DE30093CDD3 /* PatternLockViewController.swift */; };
 		B36D5857293F0DF60093CDD3 /* PatternLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36D5856293F0DF60093CDD3 /* PatternLockView.swift */; };
+		B37253AC29556AA600397788 /* TopSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37253AB29556AA600397788 /* TopSheetViewController.swift */; };
 		B382D60829343B030074B15E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B382D60A29343B030074B15E /* Localizable.strings */; };
 		B382D6132934A14E0074B15E /* BiometricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382D6122934A14E0074B15E /* BiometricsView.swift */; };
 		B382D6152934A15F0074B15E /* BiometricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B382D6142934A15F0074B15E /* BiometricsViewController.swift */; };
@@ -129,6 +130,7 @@
 		B36959C6291114B900B6E6F1 /* ContactPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPermission.swift; sourceTree = "<group>"; };
 		B36D5854293F0DE30093CDD3 /* PatternLockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternLockViewController.swift; sourceTree = "<group>"; };
 		B36D5856293F0DF60093CDD3 /* PatternLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatternLockView.swift; sourceTree = "<group>"; };
+		B37253AB29556AA600397788 /* TopSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopSheetViewController.swift; sourceTree = "<group>"; };
 		B382D60929343B030074B15E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B382D60B29343B200074B15E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B382D6122934A14E0074B15E /* BiometricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricsView.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				B36164082949910D002A8026 /* SheetViewController.swift */,
 				B333D22B2951AD190043B2D8 /* SheetPresentationViewController.swift */,
 				B333D22F295291D20043B2D8 /* BottomSheetViewController.swift */,
+				B37253AB29556AA600397788 /* TopSheetViewController.swift */,
 			);
 			path = Sheet;
 			sourceTree = "<group>";
@@ -723,6 +726,7 @@
 				B389162F290A66C5003AE1AC /* CameraView.swift in Sources */,
 				B38916222907A6F7003AE1AC /* ExpandableTableViewCell.swift in Sources */,
 				B3E893BF291E3CAC002F6AE2 /* PageViewController.swift in Sources */,
+				B37253AC29556AA600397788 /* TopSheetViewController.swift in Sources */,
 				B3A3525E2925C93D00CF726B /* DataBaseViewCell.swift in Sources */,
 				B3A3524E29232BF100CF726B /* PageWebViewController.swift in Sources */,
 				B36959B9290F581C00B6E6F1 /* PermissionAlert.swift in Sources */,

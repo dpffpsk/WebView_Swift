@@ -38,7 +38,7 @@ class SubViewController: UIViewController {
                 ["화면 전환 애니메이션"],
                 ["공유하기"],
                 ["다국어처리"],
-                ["생체인증", "패턴", "example"],
+                ["생체인증", "패턴"],
                 ["PDF"],
                 ["SheetView", "SheetPresentation"]]
     
@@ -191,8 +191,6 @@ extension SubViewController: UITableViewDataSource, UITableViewDelegate {
                 vc = BiometricsViewController()
             case 1:
                 vc = PatternLockViewController()
-            case 2:
-                vc = DragOnLineViewController()
             default:
                 print("empty vc")
             }
